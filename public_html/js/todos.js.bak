@@ -1,0 +1,551 @@
+$(window).load(function() {
+    var active_list_id = 0;
+    var edit_item_id = 0;
+    $.ajaxSetup({ cache: false });
+    $(window).bind('hashchange', function(e) {
+        tab_select(document.location.hash);
+    });
+    $('h1.current-list').text($('ul#list-dropdown > li:first-child').text());
+    $('#to-do-container ul#'+$('ul#list-dropdown > li:first-child').attr('id')).addClass('active-list');
+    tab_select(document.location.hash);
+    list_select();
+
+
+
+    pagination();
+    double_click_edit();
+    add_list_item();
+    edit_list_item();
+    add_new_list();
+    delete_list();
+    nav_clicks();
+});
+
+function pagination(){
+    var archive_pagenum = 0;
+    var trash_pagenum = 0;
+    if($('.archive-page-navigation a.active_page').attr('longdesc')){
+        var list_length=($("ul#archive > li").size());
+        var f = false;
+        for (var l=1;l<=list_length;l++){
+            if($("ul#archive > li:nth-child("+l+")").attr('style') == "display: list-item;"){
+                f = true;
+                break;
+            }
+        }
+        archive_pagenum = +$('.archive-page-navigation a.active_page').attr('longdesc');
+        if(!f){ archive_pagenum--; }
+    }
+
+    if($('.trash-page-navigation a.active_page').attr('longdesc')){
+        var list_length=($("ul#trash > li").size());
+        var g = false;
+        for (var l=1;l<=list_length;l++){
+            if($("ul#trash > li:nth-child("+l+")").attr('style') == "display: list-item;"){
+                g = true;
+                break;
+            }
+        }
+        trash_pagenum = +$('.trash-page-navigation a.active_page').attr('longdesc');
+        if(!g) { trash_pagenum--; }
+    }
+
+    $('.archive-page-navigation,.trash-page-navigation').empty();
+
+    $('#archive-container').pajinate({
+        items_per_page : 8,
+        item_container_id : '#archive',
+        nav_panel_id : '.archive-page-navigation',
+        abort_on_small_lists : true,
+        show_first_last : false,
+        start_page : archive_pagenum,
+        num_page_links_to_display : 5
+    });
+
+    $('#trash-container').pajinate({
+        items_per_page : 8,
+        item_container_id : '#trash',
+        nav_panel_id : '.trash-page-navigation',
+        abort_on_small_lists : true,
+        show_first_last : false,
+        start_page : trash_pagenum,
+        num_page_links_to_display : 5
+    });
+
+    if(!$('.archive-page-navigation').is(':visible')){
+        var list_length = $("ul#archive > li").size();
+        for(var i = 1; i<=list_length; i++){
+            $("ul#archive > li:nth-child("+i+")").attr('style',"display: list-item;");
+        }
+    }
+    if(!$('.trash-page-navigation').is(':visible')){
+        var list_length = $("ul#trash > li").size();
+        for(var i = 1; i<=list_length; i++){
+            $("ul#trash > li:nth-child("+i+")").attr('style',"display: list-item;");
+        }
+    }
+}
+
+function add_list_item(){
+    $('form#add-to-do textarea').keypress(function (e) {
+        if (e.which == 13) {
+            $('form#add-to-do').submit();
+            e.preventDefault();
+            $('form#add-to-do textarea').attr('placeholder', '...');
+        }
+    });
+    var request;
+    $("form#add-to-do").submit(function(event){
+        if (request) {
+            request.abort();
+        }
+        var $form = $(this);
+        var $inputs = $form.find("input, select, button, textarea");
+        var content = $('form#add-to-do textarea').val();
+        var list_id = $('ul.active-list').attr('id');
+        $inputs.prop("disabled", true);
+        request = $.ajax({
+            url: "../list.php",
+            type: "get",
+            data: {function: 'add', content: content, list_id: list_id}
+        });
+        request.done(function (result){
+            $("form#add-to-do")[0].reset();
+            insert('new_todo',result, list_id, 0, 0);
+        });
+        request.always(function () {
+            $inputs.prop("disabled", false);
+        });
+        event.preventDefault();
+    });
+}
+
+function edit_list_item(){
+    $('#edit-list-item-content').keypress(function (e) {
+        if (e.which == 13) {
+            $('form#edit-list-item').submit();
+            e.preventDefault();
+        }
+    });
+    var request;
+    $("form#edit-list-item").submit(function(event){
+        if (request) {
+            request.abort();
+        }
+        var $form = $(this);
+        var $inputs = $form.find("input, select, button, textarea");
+        var content = $('#edit-list-item-content').val();
+        $inputs.prop("disabled", true);
+        request = $.ajax({
+            url: "../list.php",
+            type: "get",
+            data: {function: 'edit', content: content, id: window.edit_item_id}
+        });
+        request.done(function (result){
+            $("form#edit-list-item")[0].reset();
+            insert('put_back', window.edit_item_id, window.active_list_id, 0, 0);
+            window.edit_item_id = 0;
+            window.location = "list#to-do";
+        });
+        request.always(function () {
+            $inputs.prop("disabled", false);
+        });
+        event.preventDefault();
+    });
+}
+
+function add_new_list(){
+    $('form#add-new-list textarea').keypress(function (e) {
+        if (e.which == 13) {
+            $('form#add-new-list').submit();
+            e.preventDefault();
+        }
+    });
+    var request;
+    $("form#add-new-list").submit(function(event){
+        if (request) {
+            request.abort();
+        }
+        var $form = $(this);
+        var $inputs = $form.find("input, select, button, textarea");
+        var title = $('form#add-new-list textarea').val();
+        $inputs.prop("disabled", true);
+        request = $.ajax({
+            url: "../list.php",
+            type: "get",
+            data: {function: 'new_list', title: title}
+        });
+        request.done(function (response){
+            $("form#add-new-list")[0].reset();
+            window.active_list_id = +response;
+            get_lists('list-dropdown');
+            window.location = "list#add";
+        });
+        request.always(function () {
+            $inputs.prop("disabled", false);
+        });
+        event.preventDefault();
+    });
+}
+
+function get_lists(dropdown) {
+     $.ajax({
+        type: 'get',
+        url: '../list.php',
+        data: {function: 'get_lists'},
+        success: function(response){
+            switch(dropdown){
+                case 'list-dropdown':
+                    $('ul#'+dropdown).empty();
+                    $('ul#'+dropdown).append(response+"<li id='new-list'><span class='create-new-list'><div class='create-new-list-icon'></div>Create a New List</span></li>");
+                    $('#to-do-container').append('<ul id="'+$('ul#'+dropdown+' > li:first-child').attr('id')+'" class="multi-list"></ul>')
+                    $('#to-do-container ul#' + $("ul#"+dropdown+" > li:first-child").attr('id')).addClass('active-list');
+                    $('ul.hidden-list').removeClass('hidden-list');
+                    list_select();
+                    break;
+                case 'delete-list-dropdown':
+                    $('select.'+dropdown).empty();
+                    $('select.'+dropdown).append(response);
+                    list_select();
+                    break;
+                default:
+                    break;
+            }
+        }
+    });
+}
+
+function update(type, id, list_id, status, completed) {
+    if(window.edit_item_id > 0){
+        insert('put_back', window.edit_item_id, window.active_list_id, 0, 0);
+        $("form#edit-list-item")[0].reset();
+        window.location = "list#to-do";
+        window.edit_item_id = 0;
+    }
+    $.ajax({
+        type: 'get',
+        url: '../list.php',
+        data: {function: 'update', type: type, id: id},
+        success: function(){
+            setTimeout(function(){
+                $('li#'+id).remove();
+                 if(type!=='delete'){
+                    insert(type, id, list_id, status, completed);
+                }
+                pagination();
+            }, 100);
+        }
+    });
+}
+
+function insert(type, id, list_id, status, completed){
+    $.ajax({
+        type: 'get',
+        url: '../list.php',
+        data: {function: 'insert', type: type, id: id, status: status},
+        success: function(response){
+            var list;
+            var in_focus_id = $('ul#in-focus li.to-do').attr('id');
+            var in_focus_rel_list_id = $('ul#in-focus li.to-do').attr('data-listid');
+            switch (type) {
+                case 'new_todo':
+                    list = list_id;
+                    break;
+                case 'archive_todo':
+                    list = 'archive';
+                    break;
+                case 'promote_todo':
+                    if(in_focus_id){
+                        $.ajax({
+                            type: 'get',
+                            url: '../list.php',
+                            data: {function: 'update', type: 'demote_todo', id: in_focus_id}
+                        });
+                        insert('demote_todo', in_focus_id, in_focus_rel_list_id, 0, 0);
+                    }
+                    $('button.add-button').css('display','block');
+                    $('button.dismiss-button, ul#new-list-item').css('display','none');
+                    //$("#add-list-item")[0].reset();
+                    $('ul#in-focus').replaceWith("<ul id='in-focus'>" + response + "</ul>");
+                    return;
+
+                case 'trash_todo':
+                    list = 'trash';
+                    break;
+                case 'demote_todo':
+                    list = list_id;
+                    break;
+                case 'restore_todo':
+                    list = list_id;
+                    break;
+                case 'put_back':
+                    if(status>0){
+                        list = 'archive';
+                    } else {
+                        list = list_id;
+                    }
+                    break;
+                default:
+                    break;
+            }
+
+            var list_length=($("ul#"+list+" > li").size());
+
+            if(list_length==0){
+                //alert(response);
+                $('ul.active-list').append(response);
+            } else if (list == 'archive'){
+                if(+completed == 0){
+                    $('ul#archive').prepend(response);
+                } else if (+completed <= +$('ul#archive > li:last-child').attr('data-completed')){
+                    $('ul#archive').append(response);
+                } else {
+                    for (var i=1;i<=list_length;i++)
+                    {
+                        var list_item_id = +$('ul#'+list+' > li:nth-child('+i+')').attr('id');
+                        var archive_completed = +$('ul#archive > li:nth-child('+i+')').attr('data-completed');
+                        if (completed >= archive_completed){
+                            $(response).insertBefore('li#'+list_item_id);
+                            break;
+                        }
+                    }
+                }
+            } else {
+
+                if (id <= +$('ul#'+list+' li.list-item:last-child').attr('id')){
+                    $('ul#'+list).append(response);
+                    //$(response).insertAfter($('.'+list+' li.list-item:last-child'));
+                } else {
+                    for (var l=1;l<=list_length;l++){
+                        var list_item_id = +$('ul#'+list+' > li:nth-child('+l+')').attr('id');
+                        if (id > list_item_id){
+                            $(response).insertBefore("li#"+list_item_id);
+                            break;
+                        }
+                    }
+                }
+                is_empty();
+                pagination();
+                double_click_edit();
+            }
+        }
+    });
+}
+
+function is_empty(){
+    if($("#to-do-list-tab").hasClass('active-tab')){
+        if($("#to-do-container > ul").size()>0 || $("ul#in-focus > li").size() > 0){
+
+            $("#to-do-container").removeClass('empty-to-do-list');
+        } else {
+            $("ul.to-do-list").addClass('empty-to-do-list');
+            window.location.hash = "#add";
+            $('#new-list-item-content').attr('placeholder','Your to-do list is empty! Get to it!');
+        }
+    }
+}
+
+function list_select(){
+    $('ul#list-dropdown li span').click(function(){
+        $('h1.current-list').text($(this).text());
+        if($(this).parent().attr('id') == 'new-list'){
+            window.active_list_id = 0;
+            $('h1.current-list').text($(this).text());
+            window.location = "list#new";
+        } else {
+            $('ul.active-list').removeClass('active-list');
+            $('#to-do-container ul#' + $(this).parent().attr('id')).addClass('active-list');
+            window.active_list_id = $(this).parent().attr('id');
+            window.location = "list#to-do";
+        }
+
+    });
+}
+
+function tab_select(anchor){
+    switch(anchor){
+        case '#to-do':
+            $('#to-do-list-tab').addClass('active-tab');
+            $('#archive-tab,#trash-tab').removeClass('active-tab');
+            $('#in-focus-container,#to-do-container,button.add-button').css('display','block');
+            $('#new-to-do-container,button.dismiss-button,#archive-container,#trash-container,#new-list-container,#edit-to-do-container').css('display','none');
+            $("form#add-to-do")[0].reset();
+            $('form#add-to-do textarea').attr('placeholder','I need to...');
+            $('ul.hidden-list').removeClass('hidden-list');
+            if(window.active_list_id && window.active_list_id > 0) {
+                $('ul.active-list').removeClass('active-list');
+                $('#to-do-container ul#'+window.active_list_id).addClass('active-list');
+                $('h1.current-list').text($('ul#list-dropdown li#'+window.active_list_id).text());
+            } else {
+                $('h1.current-list').text($('ul#list-dropdown li#'+$('ul.active-list').attr('id')).text());
+            }
+
+
+            //is_empty();
+            break;
+        case '#archive':
+            if(window.edit_item_id > 0){
+                insert('put_back', window.edit_item_id, window.active_list_id, 0, 0);
+                $("form#edit-to-do")[0].reset();
+            }
+            window.edit_item_id = 0;
+            $('#archive-tab').addClass('active-tab');
+            $('#to-do-list-tab,#trash-tab').removeClass('active-tab');
+            $('#archive-container,button.add-button').css('display','block');
+            $('#to-do-container,#in-focus-container,#trash-container,#new-to-do-container,button.dismiss-button,#new-list-container,#edit-to-do-container').css('display','none');
+            pagination();
+            break;
+        case '#trash':
+            if(window.edit_item_id > 0){
+                insert('put_back', window.edit_item_id, window.active_list_id, 0, 0);
+                $("form#edit-to-do")[0].reset();
+            }
+            window.edit_item_id = 0;
+            $('#trash-tab').addClass('active-tab');
+            $('#to-do-list-tab,#archive-tab').removeClass('active-tab');
+            $('#trash-container,button.add-button').css('display','block');
+            $('#to-do-container,#in-focus-container,#archive-container,#new-to-do-container,#new-list-container,#edit-to-do-container,button.dismiss-button').css('display','none');
+            pagination();
+            break;
+        case '#add':
+            $('button.add-button, #in-focus-container,#archive-container,#trash-container,#new-list-container,#edit-to-do-container').css('display','none');
+            $('#to-do-container,button.dismiss-button,#new-to-do-container').css('display','block');
+            $('form#add-to-do textarea').focus();
+            $('#to-do-list-tab').addClass('active-tab');
+            $('#archive-tab,#trash-tab').removeClass('active-tab');
+            break;
+        case '#edit':
+            if(window.edit_item_id && window.edit_item_id > 0){
+                $('button.add-button, #in-focus-container,#archive-container,#trash-container,#new-list-container,#new-to-do-container').css('display','none');
+                $('#to-do-container,button.dismiss-button,#edit-to-do-container').css('display','block');
+                $('form#edit-to-do textarea').focus();
+
+            } else {
+                window.location = "list#to-do";
+            }
+            break;
+        case '#new':
+            if($('h1.current-list').text() != 'Create a New List'){window.location = "list#to-do";}
+            $('#in-focus-container,#archive-container,#trash-container,#new-to-do-container,button.add-button,#edit-to-do-container').css('display','none');
+            $('#to-do-container,#new-list-container,button.dismiss-button').css('display','block');
+            $('form#add-new-list textarea').focus();
+            $('#to-do-list-tab').addClass('active-tab');
+            $('#archive-tab,#trash-tab').removeClass('active-tab');
+            window.active_list_id = +$('ul.active-list').attr('id');
+
+            $('ul.active-list').addClass('hidden-list');
+            $('ul.active-list').removeClass('active-list');
+            break;
+        default:
+            //window.location = "list#to-do";
+            break;
+    }
+}
+
+function nav_clicks() {
+    $('#to-do-list-tab').click(function(){
+        window.location = "list#to-do";
+    });
+    $('#archive-tab').click(function(){
+        window.location = "list#archive";
+    });
+    $('#trash-tab').click(function(){
+        window.location = "list#trash";
+    });
+    $('button.add-button').click(function(){
+        window.location = "list#add";
+    });
+    $('button.dismiss-button').click(function(){
+        window.location = "list#to-do";
+        if(window.edit_item_id && window.edit_item_id > 0){
+            insert('put_back', window.edit_item_id, window.active_list_id, 0, 0);
+            window.edit_item_id = 0;
+        }
+        if(window.active_list_id){
+            $('select.list-dropdown option[value='+window.active_list_id+']').prop('selected', true);
+            $('ul.hidden-list').addClass('active-list');
+            $('ul.hidden-list').removeClass('hidden-list');
+
+        }
+    });
+}
+
+function double_click_edit() {
+    $( "#to-do-container p.item-text" ).dblclick(function() {
+        if(window.edit_item_id > 0 && window.edit_item_id != +$(this).parent().attr('id')){
+            insert('put_back', window.edit_item_id, window.active_list_id, 0, 0);
+        }
+        $(this).parent().remove();
+
+        window.edit_item_id = +$(this).parent().attr('id');
+        window.active_list_id = +$('ul.active-list').attr('id');
+        window.location = "list#edit";
+        $('#edit-list-item-content').val($(this).text());
+    });
+}
+
+function autoColorPicker(type, created, completed, id){
+    var now = new Date().getTime() / 1000;
+    now = Math.round(now);
+    elapsed = now - created;
+    var interval = (43200 - (elapsed % 43200)) * 1000;
+    if(!$('.top-item-checkbox').hasClass('color-15')){
+        setTimeout(function(){
+            for(var i=14;i>0;i--){
+                if($('.top-item-checkbox').hasClass('color-'+i)){
+                    $('.top-item-checkbox').removeClass('color-'+i);
+                    $('.top-item-checkbox').addClass('color-'+(i+1))
+                }
+            }
+        autoColorPicker(type,created,completed,id);
+        }, interval);
+    }
+}
+
+function pickFormat(infocus, promoted, created){
+    var day = new Date().getTime() / 1000;
+    var elapsed = Math.round(day - created);
+    if(infocus){
+        return '<span class="focus-time-value focus-hours">%-d{</span><span class="focus-time-label">d</span><span class="focus-time-value focus-hours"> }%-h{</span><span class="focus-time-label">h</span><span class="focus-time-value focus-minutes"> }%-m{</span><span class="focus-time-label">m</span><span class="focus-time-value focus-minutes"> }%s{</span><span class="focus-time-label">s</span>}';
+    } else if(promoted){
+        if(elapsed >= 86400){
+            return 'Added %d{d }%h{h }%m{m }ago';
+        } else {
+            return 'Added %-d{d }%-h{h }%-m{m }%s{s }ago';
+        }
+    } else {
+        if(elapsed >= 86400){
+            return '<span class="time-value">%d{</span><span class="time-label">d</span><span class="time-value"> }%h{</span><span class="time-label">h</span><span class="time-value"> }%m{</span><span class="time-label">m</span> }';
+        } else {
+            return '<span class="time-value">%-d{</span><span class="time-label">d</span><span class="time-value"> }%-h{</span><span class="timelabel">h</span><span class="time-value"> }%-m{</span><span class="time-label">m</span><span class="time-value"> }%s{</span><span class="time-label">s</span>}';
+        }
+    }
+}
+
+function delete_list() {
+    var request;
+    $("form#delete-list").submit(function(event){
+        if (request) {
+            request.abort();
+        }
+    if(confirm('Permanently DELETE this list and all it\'s List Items?')){
+        var $form = $(this);
+        var $inputs = $form.find("input, select, button, textarea");
+        var list_id = $('select.delete-list-dropdown').val();
+        $inputs.prop("disabled", true);
+        request = $.ajax({
+            url: "../list.php",
+            type: "get",
+            data: {function: 'delete_list', id: list_id}
+        });
+        request.done(function (){
+            $("form#delete-list")[0].reset();
+            get_lists('delete-list-dropdown');
+        });
+        request.always(function () {
+            $inputs.prop("disabled", false);
+        });
+        event.preventDefault();
+    }
+    });
+}

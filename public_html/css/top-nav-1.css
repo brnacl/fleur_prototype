@@ -1,0 +1,367 @@
+/*TOP CONTROLS******************************************************************TOP CONTROLS*/
+
+main nav {
+position: relative;
+display: block;
+height: 60px;
+margin-top: 30px;
+width: 100%;
+z-index: 1000;
+-webkit-touch-callout: none;
+-webkit-user-select: none; /*user select is not official speck, so let's watch this to make sure it doesn't cause problems*/
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+
+	@media only screen and (min-width: 768px) {
+		main nav{
+		border-top: 60px solid rgba(46,46,46,.97);
+		background: url(../img/30-black.png), url(../img/zen-5.png)top center fixed;
+		height: 120px;
+		margin-bottom: 0px;
+		margin-top: 0px;
+		}
+	}
+
+main nav h1 {
+position: absolute;
+color: rgba(255,255,255,.85);
+float:left;
+width: 100%;
+font-size: 1.7em;
+font-weight: 100;
+margin: 7px 25px 0 20px;
+letter-spacing: .08em;
+text-transform: lowercase;
+}
+
+main nav ul li button.list-select { /**multi-list menu button**/
+position: absolute;
+height: 60px;
+right: 0;
+top: -60px;
+width: 60px;
+}
+
+main nav ul li button.list-select:after { /**chevron for the multi-list menu button**/
+position: absolute;
+border:  1px;
+border-right-color: transparent;
+border-top-color: transparent;
+border-left-style: solid;
+border-bottom-style: solid;
+border-bottom-color: rgba(255,255,255,0.6);
+border-left-color: rgba(255,255,255,0.6);
+border-bottom-color: rgba(255,255,255,0.8);
+border-left-color: rgba(255,255,255,0.8);
+content: "";
+display: block;
+height: 15px;
+right: 22px;
+top: 18px;
+width: 15px;
+-webkit-transform: rotate(-45deg);
+-moz-transform: rotate(-45deg);
+-o-transform: rotate(-45deg);
+-ms-transform: rotate(-45deg);
+transform: rotate(-45deg);
+transition: border-left-color .25s ease-in-out, border-bottom-color .25s ease-in-out;
+z-index: 1;
+}
+
+main nav ul ul{  /**the multi-list menu**/
+height: 60px;
+margin-top: -60px;
+opacity: 0;
+padding: 60px 0 0 0;
+transition: visibility .05s, opacity .05s;
+visibility: hidden;
+z-index: 20000;
+}
+
+	main nav ul li:hover > ul { /*controls multi-list menu visibility*/
+	visibility: visible;
+	opacity: 1;
+	transition: visibility .25s, opacity .25s;
+	}
+
+main nav ul ul li{
+background: url(../img/40-black.png), url(../img/zen-3.png)center center fixed;
+height: 60px;
+font-size: 1.7em;
+font-weight: 100;
+text-transform: lowercase;
+transition: background .25s;
+width: 100%;
+}
+
+main nav ul ul li a{
+background-image: url(../img/5-white.png);
+background-repeat:repeat-x;
+color: rgba(255,255,255,.65);
+display: block;
+height: 100%;
+padding: 7px 0 0 20px;
+transition: .25s;
+width: 100%;
+}
+
+	main nav ul ul li a:hover{
+	background: rgba(0,0,0,0.2);
+	color: rgba(255,255,255,.75);
+	}
+
+main nav ul ul li a.empty-list{ /*width of an empty list, making room for delete button*/
+width: calc( 100% - 60px);
+}
+
+main nav ul ul li a.empty-list:after{ /*vertical separator between empty list and delete button*/
+position: relative;
+background:rgba(255,255,255,0.05);
+content: '';
+display: block;
+float: right;
+height: 60px;
+margin-right: -1px;
+margin-top: -7px;
+width: 1px;
+}
+
+main nav ul li ul li .trash-symbol { /*background for trash icon with subtle stripe across top*/
+position: relative;
+background-image: url(../img/5-white.png);
+background-repeat:repeat-x;
+display: block;
+float: right;
+height: 60px;
+margin-right: 0px;
+margin-bottom: -60px;
+transition: background .1s;
+width: 60px;
+z-index: 1000;
+}
+
+	main nav ul ul li button.trash-symbol:hover{
+	background: rgba(212, 66, 52,.6);
+	background: rgba(0,0,0,.2);
+	}
+
+	main nav ul ul li button.trash-symbol:hover + a.empty-list{
+	background: rgba(212, 66, 52,.3);
+	color: rgba(255,255,255,.75);
+	transition: .35s;
+	}
+
+
+
+main nav ul li ul li .trash-symbol:after { /*trash icon circle*/
+position: absolute;
+border: 1px solid rgba(255,255,255,0.5);
+border-radius: 100px;
+content:'';
+display: block;
+float: right;
+height: 24px;
+right: 18px;
+top: 19px;
+transition: .25s;
+width: 24px;
+z-index: 1000;
+}
+
+	main nav ul li ul li .trash-symbol:hover:after {
+	background: rgba(212, 66, 52,1);
+	border: 1px solid rgba(255,255,255,0);
+	transition: background .1s;
+	}
+
+
+main nav ul ul li button.trash-symbol:before { /*the minus sign*/
+position: absolute;
+content: '';
+background: rgba(255,255,255,0.46);
+display: block;
+height: 2px;
+right: 22px;
+top:30px;
+transition:.25s;
+width: 16px;
+z-index: 1001;
+}
+
+	main nav ul ul li button.trash-symbol:hover:before {
+	background:rgba(255,255,255,.9);
+	}
+
+
+/****************************************************CREATE NEW LIST BUTTON***************************************/
+
+main nav ul ul li a.create-new-list {
+font-weight: 300;
+font-size: .7em;
+letter-spacing: .13em;
+padding-top: 16px;
+text-transform: uppercase;
+}
+
+main nav ul li ul li .create-new-list-icon { /*circle*/
+position: relative;
+border: 1px solid rgba(255,255,255,0.6);
+border-radius: 100px;
+display: block;
+float: left;
+height: 25px;
+margin: 2px 15px 0 -2px;
+transition: .25s;
+width: 25px;
+}
+
+main nav ul ul li a.create-new-list:hover .create-new-list-icon {
+border-color: rgba(255,255,255,0.75);
+}
+
+main nav ul ul li .create-new-list-icon:before { /*horizontal bar*/
+position: absolute;
+content: '';
+background: rgba(255,255,255,0.6);
+display: block;
+height: 1px;
+right: 4px;
+top:11px;
+transition:.25s;
+width: 15px;
+z-index: 1001;
+}
+
+	main nav ul ul li a.create-new-list:hover .create-new-list-icon:before {
+	background: rgba(255,255,255,0.75);
+	}
+
+main nav ul ul li .create-new-list-icon:after { /*vertical bar*/
+position: absolute;
+content: '';
+background: rgba(255,255,255,0.6);
+display: block;
+height: 15px;
+right: 11px;
+top:4px;
+transition:.25s;
+width: 1px;
+z-index: 1001;
+}
+
+	main nav ul ul li a.create-new-list:hover .create-new-list-icon:after {
+	background: rgba(255,255,255,0.75);
+	}
+
+
+/*******************************THE BIG +/x BUTTON**************************************/
+main nav > button { /*The base position and size*/
+position: absolute;
+height: 60px;
+margin: 0;
+right: 0;
+top: 0px;
+width: 60px;
+transition: .2s linear;
+z-index: -1;
+}
+
+	main nav > button:hover{ /*targets the +/x button*/
+	background: rgba(0,0,0,.25);
+	border-radius: 0 3px 0 0;
+	}
+
+	main nav > button:active{ /*targets the +/x button*/
+	background: rgba(0,0,0,0.45);
+	border-radius: 0 3px 0 0;
+	transition: 0s linear;
+	}
+
+main nav > button.add-button:before { /*Horizontal bar of the + Button*******************/
+position: absolute;
+background: none;
+border: 14px solid rgba(255,255,255,.65);
+border-top: none;
+border-bottom: none;
+bottom: 29px;
+left: 16px;
+content:' ';
+display: block;
+border-radius: 0px 0 0 0;
+height: 1px;
+width: 29px;
+}
+
+main nav > button.add-button:after { /*The vertical part of the + Button*************************/
+position: absolute;
+background: rgba(255,255,255,.65);
+bottom: 15px;
+right: 29px;
+content:' ';
+display: block;
+height: 29px;
+width: 1px;
+}
+
+	main nav > button.add-button:active:before {
+	border-color: rgba(255,255,255,0.8);
+	border-top: none;
+	border-bottom: none;
+	}
+
+	main nav > button.add-button:active:after {
+	background: rgba(255,255,255,0.8);
+	}
+
+main nav > button.dismiss-button:before { /*First part of the X Button****************************/
+position: absolute;
+background: none;
+border: 14px solid rgba(255,255,255,.9);
+border-top: none;
+border-bottom: none;
+bottom: 30px;
+left: 16px;
+content:' ';
+display: block;
+border-radius: 0px 0 0 0;
+height: 1px;
+width: 29px;
+z-index: 1;
+-webkit-transform: rotate(-45deg);
+-moz-transform: rotate(-45deg);
+-o-transform: rotate(-45deg);
+-ms-transform: rotate(-45deg);
+transform: rotate(-45deg);
+}
+
+main nav > button.dismiss-button:after { /*Other part of the X Button****************************/
+position: absolute;
+background: rgba(255,255,255,.9);
+bottom: 16px;
+right: 29px;
+content:' ';
+display: block;
+height: 29px;
+width: 1px;
+z-index: 1;
+-webkit-transform: rotate(-45deg);
+-moz-transform: rotate(-45deg);
+-o-transform: rotate(-45deg);
+-ms-transform: rotate(-45deg);
+transform: rotate(-45deg);
+}
+
+	main nav > button.dismiss-button:active:before {
+	border-color: rgba(255,255,255,0.8);
+	border-top: none;
+	border-bottom: none;
+	}
+
+	main nav > button.dismiss-button:active:after {
+	background: rgba(255,255,255,0.8);
+	}
+
+

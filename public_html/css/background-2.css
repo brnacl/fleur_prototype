@@ -1,0 +1,23 @@
+body {
+ackground: url(../ig/grey_wash_wall.png) center center fixed, #999;
+}
+
+	@media only screen and (min-width: 768px) {
+		html {
+		background: url(../img/zen-5.png)top center fixed no-repeat #000;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+
+		}
+	
+		body{
+		background: none;
+		font-family: 'Lato', sans-serif;
+		font-weight: 300;
+		margin-top: 0px;
+		min-height: 100%;
+		width: 100%;
+		}
+	}

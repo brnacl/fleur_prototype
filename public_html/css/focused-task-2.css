@@ -1,0 +1,268 @@
+#in-focus-container .to-do{
+position: relative;
+background: rgba(0,0,0,.2);
+ackground: none;
+margin-top: 1px;
+min-height: 239px;
+padding: 0;
+}
+
+	@media only screen and (min-width: 768px) {
+		#in-focus-container .to-do{
+		}
+	}
+
+/*#in-focus-container input[type=checkbox] + label { /*bigger checkbox*/
+/*position: absolute;
+border-radius:22px;
+cursor: pointer;
+height: 27px;
+left: 17px;
+top: 17px;
+transition: .1s linear;
+width: 26px;
+z-index: 0;
+}
+
+/*#in-focus-container input[type=checkbox] + label:after { /*** bigger checkmark***/
+	/*opacity: 0;
+	content: ' ';
+	position: absolute;
+	width: 15px;
+	height: 10px;
+	background: transparent;
+	top: 6px;
+	left: 6px;
+	border: 1px solid rgba(0,0,0,0.8);
+	border-top: none;
+	border-right: none;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	visibility: hidden;
+	z-index: 1;
+	}
+	
+	#in-focus-container input[type=checkbox]:checked + label:after { /*** Create the checkbox state for the tick*/
+	/*	visibility: visible;
+		opacity: 1;
+		}*/
+
+
+#in-focus-container .to-do p.to-do-text{
+font-family: "Lato", CenturyGothic, AppleGothic, sans-serif;
+
+position: relative;
+color: rgba(255,255,255,0.8);
+font-size: 1.4em;
+font-weight: 100;
+left: -2px;
+letter-spacing: 0.08em;
+max-width: 80%;
+min-height: 15px;
+overflow: hidden;
+padding-top: 14px;
+}
+
+p.focus-time {
+position: relative;
+color: rgba(255,255,255,0.8);
+font-family: "Lato", CenturyGothic, AppleGothic, sans-serif;
+font-weight: 300;
+margin-top: 10px;
+text-align: center;
+}
+
+.focus-time-value {
+line-height: 1em;
+font-size: 4.3em;
+font-weight: 100;
+}
+
+.focus-time-label {
+font-size: 1.1em;
+margin: 0 10px 0 2px;
+}
+
+p.working-on-message{
+position: relative;
+color: rgba(255,255,255,0.8);
+ine-height: 1px;
+font-weight: 800;
+font-size: .9em;
+letter-spacing: .3em;
+margin-top: 4px;
+padding-bottom: 60px;
+text-align: center;
+text-transform: uppercase;
+}
+
+p.finished-in-message{
+position: relative;
+color: rgba(255,255,255,0.8);
+ine-height: 1px;
+font-weight: 800;
+font-size: .9em;
+letter-spacing: .3em;
+margin-top: 4px;
+margin-bottom: 0px;
+text-align: center;
+text-transform: uppercase;
+display: none;
+}
+
+.in-focus-control-menu {
+position: absolute;
+bottom: 0px;
+height: 60px;
+width: 100%;
+}
+
+/* .to-do.in-focus .age-of-the-to-do {
+position: relative;
+text-align: center;
+font-size: 14px;
+height: auto;
+bottom: 0;
+left: auto;
+right: auto;
+top: auto;
+margin-top: 30px;
+color: rgba(255,255,255,0.8);
+font-weight: 300;
+letter-spacing: .1em;
+z-index: -10;
+}
+
+.to-do.in-focus li.age-of-the-to-do .time-value {
+color: rgba(255,255,255,0.8);
+font-size: 14px;
+font-weight: 300;
+}
+
+.to-do.in-focus li.age-of-the-to-do .time-label {
+color: rgba(255,255,255,0.8);
+font-size: 14px;
+font-weight: 300;
+}*/
+
+
+
+.unfocus-arrow { /*bg*/
+position: absolute;
+background: rgba(255,255,255,0.075);
+border-radius: 300px;
+bottom: 5px;
+display: block;
+height: 50px;
+right:65px;
+transition:.25s;
+width: 50px;
+}
+
+	.unfocus-arrow:hover {
+	background: rgba(0,0,0,0.2);
+	}
+
+.unfocus-arrow:before { /*arrowhead*/
+position: absolute;
+border:   inset 2px; 
+border-color: rgba(0,0,0,0.9);
+border-color: rgba(255,255,255,0.7);
+border-left-color: transparent;
+border-bottom-color: transparent;
+border-right-style: solid;
+border-top-style: solid;
+content: "";
+display: block;
+float: right;
+height: 16px;
+margin-right: 0px;
+margin-top: 0px;
+right: 17px;     
+bottom: 15px;
+width: 16px;
+-webkit-transform: rotate(135deg);
+-moz-transform: rotate(135deg);
+-o-transform: rotate(135deg);
+-ms-transform: rotate(135deg);
+transform: rotate(135deg);
+z-index: 1;
+}
+
+	.unfocus-arrow:hover:before {
+	border-right-color: rgba(255,255,255,.8);
+	border-top-color: rgba(255,255,255,.8);
+	}
+
+
+.unfocus-arrow:after {  /*arrow shaft*/
+position: absolute;
+background: rgba(255,255,255,0.7);
+content: "";
+height: 21px;
+right: 24px;
+bottom: 15px;
+width: 2px;
+z-index: 1;
+}
+
+	.unfocus-arrow:hover:after {
+	background: rgba(255,255,255,.8);
+	}
+
+
+.pause-button { /*bg*/
+position: absolute;
+background: rgba(0,0,0,0.2);
+background: rgba(255,255,255,0.075);
+border-radius: 300px;
+bottom: 5px;
+display: block;
+height: 50px;
+right:5px;
+transition:.25s;
+width: 50px;
+}
+
+	.pause-button:hover {
+	background: rgba(0,0,0,0.2);
+	}
+
+
+.pause-button:before { /*left pause symbol*/
+position: absolute;
+background: rgba(255,255,255,0.7);
+content: "";
+height: 23px;
+right: 29px;
+bottom: 14px;
+width: 2px;
+transition:.25s;
+z-index: 1;
+}
+
+	.pause-button:hover:before {
+	background: rgba(255,255,255,.8);
+	}
+
+
+.pause-button:after {  /*right pause symbol*/
+position: absolute;
+background: rgba(255,255,255,0.7);
+content: "";
+height: 23px;
+right: 19px;
+bottom: 14px;
+width: 2px;
+transition:.25s;
+z-index: 1;
+}
+
+	.pause-button:hover:after {
+	background: rgba(255,255,255,.8);
+	}
+
+

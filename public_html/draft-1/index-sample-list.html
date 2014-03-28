@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<!--[if IE 8]> 				 <html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Fleur | To-Do's with a Twist of Time</title> <!--optimize for appearance in search results and bookmarks-->
+
+	<link rel="stylesheet" href="css/foundation.css">
+	
+	<link rel="stylesheet" href="css/font-awesome.css">
+
+	<link rel="stylesheet" href="css/top-of-page-spacey-2b.css">
+	
+	<link rel="stylesheet" href="css/add-to-do-box.css">
+	
+
+	<link rel="stylesheet" href="css/list-menu-right.css">
+	
+		<link rel="stylesheet" href="css/color-set-3.css">
+
+	
+	<link rel="stylesheet" href="css/checkbox-1.css">
+	
+	<link rel="stylesheet" href="css/bottom-of-page-1.css">
+
+	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:800,700,600,500,400,300,' rel='stylesheet' type='text/css'>	
+	<script src="js/vendor/custom.modernizr.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+<style>
+
+.add-to-do-box {
+display: none;
+}
+
+
+.logo {
+margin-left: 38px;
+margin-top: 38px;
+}
+
+
+.logo img{
+top: 0px;
+}
+
+.logo:after {
+display:none;
+}
+
+header p.tagline{
+display: none;
+ackground: #F4FCF2;
+ine-height: 1.4;
+color: rgba(0,0,0,.8);
+color: rgba(51,51,51,.6);
+color: rgba(0,0,0,.8);
+top: 127px;
+left: 127px;
+padding: 0 10px 0 3px;
+text-shadow: 0 0 15px #fff;
+}
+
+header:before {
+position: absolute;
+ackground: rgba(255,255,255,.1);
+content: '';
+display: block;
+height:127px;
+margin:0,0,0,0;
+width: 128px;
+z-index: -160;
+}
+
+
+
+</style>
+</head>
+
+<body>
+
+<header class="my-sticky-element hide-for-small">
+		<div class="logo">
+			<!--<div class="logo-petals-left"></div>
+			<div class="logo-petals-right"></div>-->
+
+			<img class="" src="img/fleur-logo-79.png">
+		</div>
+		<p class="tagline">To Do's with a Twist of Time</p>
+</header>
+
+<div class="header-2"></div>
+
+
+<div class="user-menu upper-right">			
+	<ul class="logged-in-user">
+		<i class="icon-angle-down"></i>
+		<li>logged.in.user@gmail.com</li>
+	</ul>
+	<ul class="user-menu-dropdown">
+		<li class=""><a href="">Email Address</a></li> 
+		<li class=""><a href="">Password</a></li>
+		<li class=""><a href="">Forgot?</a></li>
+	</ul>
+</div>
+
+<div class="row">	
+	<div class="large-7 small-12 large-centered columns">	
+		<nav class="app-top-nav show-for-small">
+			<div class="itty-branding show-for-small">fleur</div>
+			<div class="user-menu">			
+				<div class="user-menu-buttons">mademoiselle@fleur.io<i class="icon-angle-down"></i></div>
+				<ul class="user-menu-dropdown">
+					<li class=""><a href="">Account & Password</a></li> 
+					<li class=""><a href="">Get Fleur Plus</a></li>
+					<li class=""><a href="">Sign Out</a></li>
+				</ul>
+			</div>
+		</nav>
+		<div class="add-to-do-wrapper hide-for-small">
+			<h1 class="current-state-title">To Do</h1>
+			<a href="index-sample-list-add.html" class="add-to-do add-button"></a>
+		</div>		
+		<div class="add-to-do-box">
+			<form class="add-to-do-form">
+				<label>Textarea Label</label>
+				<textarea placeholder="I need to..." name="add-to-do-textarea" maxlength="188";></textarea>
+			</form>
+		</div>
+		<ul class="to-do-list">		
+			<!--<li class="to-do today color-1"> 
+				<ul>
+					<li>
+						<a class="right-side-button-wrap" href="">
+						<div class="right-side-button caret-color-1"></div>
+						</a>
+						<ul class="to-do-menu color-1">
+							<div class="close-menu-button show-for-small"></div>
+							<li>
+								<i class="icon-circle-arrow-up focus-button"></i>
+								<i class="icon-minus-sign trash-button"></i>
+								<li class="age-timer"><span class="time-value">3</span><span class="time-label">hours</span><span class="time-value"></span><span class="time-label"></span></li>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<input type="checkbox" id="checkbox-233-input" class="left" value="1" name="">
+				<label for="checkbox-233-input" class="color-1"></label>
+				<p style="">Order dinner online</p>
+			</li>
+			<li class="to-do today color-1"> 
+				<ul>
+					<li>
+						<a class="right-side-button-wrap" href="">
+						<div class="right-side-button caret-color-1"></div>
+						</a>
+						<ul class="to-do-menu color-1">
+							<div class="close-menu-button show-for-small"></div>
+							<li>
+								<i class="icon-circle-arrow-up focus-button"></i>
+								<i class="icon-minus-sign trash-button"></i>
+								<li class="age-timer"><span class="time-value">6</span><span class="time-label">hours</span><span class="time-value"></span><span class="time-label"></span></li>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<input type="checkbox" id="checkbox-2334-input" class="left" value="1" name="">
+				<label for="checkbox-2334-input" class="color-1"></label>
+				<p style="">Work out at the gym. Lifting, cardio, yoga, rowing, basketball.</p>
+			</li>
+			<li class="to-do today color-1"> 
+				<ul>
+					<li>
+						<a class="right-side-button-wrap" href="">
+						<div class="right-side-button caret-color-1"></div>
+						</a>
+						<ul class="to-do-menu color-1">
+							<div class="close-menu-button show-for-small"></div>
+							<li>
+								<i class="icon-circle-arrow-up focus-button"></i>
+								<i class="icon-minus-sign trash-button"></i>
+								<li class="age-timer"><span class="time-value">6</span><span class="time-label">hours</span><span class="time-value"></span><span class="time-label"></span></li>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<input type="checkbox" id="checkbox-2335-input" class="left" value="1" name="">
+				<label for="checkbox-2335-input" class="color-1"></label>
+				<p style="">Work out at the gym. Lifting, cardio, yoga, rowing, basketball.</p>
+			</li>
+			<li class="to-do today color-8"> 
+				<ul>
+					<li>
+						<a class="right-side-button-wrap" href="">
+						<div class="right-side-button caret-color-8"></div>
+						</a>
+						<ul class="to-do-menu color-8">
+							<div class="close-menu-button show-for-small"></div>
+							<li>
+								<i class="icon-circle-arrow-up focus-button"></i>
+								<i class="icon-minus-sign trash-button"></i>
+								<li class="age-timer"><span class="time-value">4</span><span class="time-label">days</span><span class="time-value"></span><span class="time-label"></span></li>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<input type="checkbox" id="checkbox-1-input" class="left" value="1" name="">
+				<label for="checkbox-1-input" class="color-8"></label>
+				<p style="">Review accounts receivable</p>
+			</li>
+			<li class="to-do today color-8"> 
+				<ul>
+					<li>
+						<a class="right-side-button-wrap" href="">
+						<div class="right-side-button caret-color-8"></div>
+						</a>
+						<ul class="to-do-menu color-8">
+							<div class="close-menu-button show-for-small"></div>
+							<li>
+								<i class="icon-circle-arrow-up focus-button"></i>
+								<i class="icon-minus-sign trash-button"></i>
+								<li class="age-timer"><span class="time-value">4</span><span class="time-label">days</span><span class="time-value"></span><span class="time-label"></span></li>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<input type="checkbox" id="checkbox-1-input" class="left" value="1" name="">
+				<label for="checkbox-1-input" class="color-8"></label>
+				<p style="">Review accounts receivable</p>
+			</li>
+			<li class="to-do today color-14"> 
+				<ul>
+					<li>
+						<a class="right-side-button-wrap" href="">
+						<div class="right-side-button caret-color-14"></div>
+						</a>
+						<ul class="to-do-menu color-14">
+							<div class="close-menu-button show-for-small"></div>
+							<li>
+								<i class="focus-button-arrow"></i>
+								<i class="icon-trash trash-button"></i>
+								<li class="age-timer"><span class="time-value">7</span><span class="time-label">days</span><span class="time-value"></span><span class="time-label"></span></li>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<input type="checkbox" id="checkbox-1-input" class="left" value="1" name="">
+				<label for="checkbox-1-input" class="color-14"></label>
+				<p style="">Take car in for 6-month checkup</p>
+			</li>
+			<li class="to-do today color-14"> 
+				<ul>
+					<li>
+						<a class="right-side-button-wrap" href="">
+						<div class="right-side-button caret-color-14"></div>
+						</a>
+						<ul class="to-do-menu color-14">
+							<div class="close-menu-button show-for-small"></div>
+							<li>
+								<i class="focus-button-arrow"></i>
+								<i class="icon-trash trash-button"></i>
+								<li class="age-timer"><span class="time-value">7</span><span class="time-label">days</span><span class="time-value"></span><span class="time-label"></span></li>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<input type="checkbox" id="checkbox-1-input" class="left" value="1" name="">
+				<label for="checkbox-1-input" class="color-14"></label>
+				<p style="">Take car in for 6-month checkup</p>
+			</li>-->
+			<li class="to-do"> 
+				<ul>
+					<li>
+						<a class="right-side-button-wrap" href="">
+						<div class="right-side-button caret-color-2"></div>
+						</a>
+						<ul class="to-do-menu color-2">
+							<div class="close-menu-button show-for-small"></div>
+							<li>
+								<i class="icon-circle-arrow-up focus-button"></i>
+								<i class="icon-minus-sign trash-button"></i>
+								<li class="age-timer"><span class="time-value">1</span><span class="time-label">day</span><span class="time-value"></span><span class="time-label"></span></li>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<input type="checkbox" id="checkbox-2336-input" class="left" value="1" name="">
+				<label for="checkbox-2336-input" class="color-2"></label>
+				<p style="">Repair flat on bicycle</p>
+			</li>
+			<li class="to-do"> 
+				<ul>
+					<li>
+						<a class="right-side-button-wrap" href="">
+						<div class="right-side-button caret-color-3"></div>
+						</a>
+						<ul class="to-do-menu color-3">
+							<div class="close-menu-button show-for-small"></div>
+							<li>
+								<i class="icon-circle-arrow-up focus-button"></i>
+								<i class="icon-minus-sign trash-button"></i>
+								<li class="age-timer"><span class="time-value">2</span><span class="time-label">days</span><span class="time-value"></span><span class="time-label"></span></li>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<input type="checkbox" id="checkbox-2337-input" class="left" value="1" name="">
+				<label for="checkbox-2337-input" class="color-3"></label>
+				<p style="">Buy groceries</p>
+			</li>
+			<li class="to-do"> 
+				<ul>
+					<li>
+						<a class="right-side-button-wrap" href="">
+						<div class="right-side-button caret-color-8"></div>
+						</a>
+						<ul class="to-do-menu color-8">
+							<div class="close-menu-button show-for-small"></div>
+							<li>
+								<i class="icon-circle-arrow-up focus-button"></i>
+								<i class="icon-minus-sign trash-button"></i>
+								<li class="age-timer"><span class="time-value">4</span><span class="time-label">days</span><span class="time-value"></span><span class="time-label"></span></li>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<input type="checkbox" id="checkbox-1-input" class="left" value="1" name="">
+				<label for="checkbox-1-input" class="color-8"></label>
+				<p style="">Review accounts receivable</p>
+			</li>
+			<li class="to-do"> 
+				<ul>
+					<li>
+						<a class="right-side-button-wrap" href="">
+						<div class="right-side-button caret-color-12"></div>
+						</a>
+						<ul class="to-do-menu color-12">
+							<div class="close-menu-button show-for-small"></div>
+							<li>
+								<i class="icon-circle-arrow-up focus-button"></i>
+								<i class="icon-minus-sign trash-button"></i>
+								<li class="age-timer"><span class="time-value">6</span><span class="time-label">days</span><span class="time-value"></span><span class="time-label"></span></li>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<input type="checkbox" id="checkbox-0-input" class="left" value="1" name="">
+				<label for="checkbox-0-input" class="color-12"></label>
+				<p style="">Shop for new running shoes</p>
+			</li>
+			<li class="to-do"> 
+				<ul>
+					<li>
+						<a class="right-side-button-wrap" href="">
+						<div class="right-side-button caret-color-14"></div>
+						</a>
+						<ul class="to-do-menu color-14">
+							<div class="close-menu-button show-for-small"></div>
+							<li>
+								<i class="icon-circle-arrow-up focus-button"></i>
+								<i class="icon-minus-sign trash-button"></i>
+								<li class="age-timer"><span class="time-value">7</span><span class="time-label">days</span><span class="time-value"></span><span class="time-label"></span></li>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<input type="checkbox" id="checkbox-1-input" class="left" value="1" name="">
+				<label for="checkbox-1-input" class="color-14"></label>
+				<p style="">Review accounts payable.</p>
+			</li>
+			<li class="to-do"> 
+				<ul>
+					<li>
+						<a class="right-side-button-wrap" href="">
+						<div class="right-side-button caret-color-14"></div>
+						</a>
+						<ul class="to-do-menu color-14">
+							<div class="close-menu-button show-for-small"></div>
+							<li>
+								<i class="icon-circle-arrow-up focus-button"></i>
+								<i class="icon-minus-sign trash-button"></i>
+								<li class="age-timer"><span class="time-value">7</span><span class="time-label">days</span><span class="time-value"></span><span class="time-label"></span></li>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<input type="checkbox" id="checkbox-1-input" class="left" value="1" name="">
+				<label for="checkbox-1-input" class="color-14"></label>
+				<p style="">Strip the paint off the antique bedroom set, using the eco-friendly/low-VOC stripping compound.</p>
+			</li>
+			<li class="to-do"> 
+				<ul>
+					<li>
+						<a class="right-side-button-wrap" href="">
+						<div class="right-side-button caret-color-14"></div>
+						</a>
+						<ul class="to-do-menu color-14">
+							<div class="close-menu-button show-for-small"></div>
+							<li>
+								<i class="focus-button-arrow"></i>
+								<i class="icon-trash trash-button"></i>
+								<li class="age-timer"><span class="time-value">7</span><span class="time-label">days</span><span class="time-value"></span><span class="time-label"></span></li>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<input type="checkbox" id="checkbox-1-input" class="left" value="1" name="">
+				<label for="checkbox-1-input" class="color-14"></label>
+				<p style="">Take car in for 6-month checkup</p>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<div class="row">
+	<nav class="bottom-nav large-7 large-centered columns">
+		<ul>
+			<li class="tab-1 active-tab"><i class="icon-circle"></i> &nbspTo Do</li>
+			<li class="tab-2"> <i class="icon-ok-sign"></i> &nbspArchive</li>
+			<li class="tab-3"><i class="icon-trash"></i></li>
+		</ul>
+	</nav>
+</div>
+
+<footer>
+<img src="img/ADW-logo-5.png" class="signature hide-for-small">
+</footer>
+
+
+
+
+

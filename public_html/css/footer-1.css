@@ -1,0 +1,96 @@
+footer {
+position: fixed;
+bottom: 0px;
+height: 60px;
+width: 100%;
+margin-top: -60px;
+z-index: 1000;
+}
+
+footer nav {
+border-top: 3px;
+border-top-style: solid;
+z-index: 100;
+}
+
+footer nav .tab-1 {
+position: relative;
+width: calc(50% - 30px);
+float: left;
+}
+
+footer nav .tab-2 {
+position: relative;
+width: calc(50% - 30px);
+float: left;
+}
+
+footer nav .tab-3 {
+border-left: 1px solid rgba(255,255,255,0.05);
+float: right;
+width: 60px;
+}
+
+footer nav ul {
+height: 57px;
+background: rgba(45,45,45,0.95);
+}
+
+footer nav:before {
+position: absolute;
+background: red;
+bottom: 60px;
+content: '';
+display: block;
+height: 2px;
+left: 0;
+width: 100%;
+z-index: 1000;
+background: -moz-linear-gradient(top,  rgba(43,44,45,0) 0%, rgba(43,44,45,0.93) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(43,44,45,0)), color-stop(100%,rgba(43,44,45,0.93))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(43,44,45,0) 0%,rgba(43,44,45,0.93) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(43,44,45,0) 0%,rgba(43,44,45,0.93) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(43,44,45,0) 0%,rgba(43,44,45,0.93) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(43,44,45,0) 0%,rgba(43,44,45,0.93) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#002b2c2d', endColorstr='#ed2b2c2d',GradientType=0 ); /* IE6-9 */
+}
+
+footer nav ul li{
+font-family: 'Lato', sans-serif;
+color: rgba(255,255,255,0.8);
+font-size: 1.2em;
+font-weight: 100;
+height: 57px;
+padding: 14px 0 0 22px;
+margin-top: 0px;
+text-align: left;
+}
+
+footer nav ul li.active-tab {
+color: rgba(0,0,0,.9);
+font-weight: 300;
+}
+
+footer nav .trash-symbol:after {
+position: absolute;
+content: '';
+border: 1px solid rgba(255,255,255,0.5);
+border-radius: 100px;
+color: #eee;
+display: block;
+height: 24px;
+right: 18px;
+top:18px;
+width: 24px;
+}
+
+footer nav .trash-symbol:before {
+position: absolute;
+content: '';
+background: rgba(255,255,255,0.46);
+display: block;
+height: 2px;
+right: 22px;
+top:29px;
+width: 16px;
+}

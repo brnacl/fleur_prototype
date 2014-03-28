@@ -1,0 +1,111 @@
+html,body{
+height: 130%;
+}
+
+
+.wrapper{
+position: fixed;
+height: 100%;
+width: 100%;
+z-index: 2;
+
+background: -moz-linear-gradient(top,  rgba(0,0,0,0.03) 0%, rgba(0,0,0,0.03) 47%, rgba(0,0,0,0.2) 59%, rgba(0,0,0,0.2) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.03)), color-stop(47%,rgba(0,0,0,0.03)), color-stop(59%,rgba(0,0,0,0.2)), color-stop(100%,rgba(0,0,0,0.2))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(0,0,0,0.03) 0%,rgba(0,0,0,0.03) 47%,rgba(0,0,0,0.2) 59%,rgba(0,0,0,0.2) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(0,0,0,0.03) 0%,rgba(0,0,0,0.03) 47%,rgba(0,0,0,0.2) 59%,rgba(0,0,0,0.2) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(0,0,0,0.03) 0%,rgba(0,0,0,0.03) 47%,rgba(0,0,0,0.2) 59%,rgba(0,0,0,0.2) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(0,0,0,0.03) 0%,rgba(0,0,0,0.03) 47%,rgba(0,0,0,0.2) 59%,rgba(0,0,0,0.2) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#08000000', endColorstr='#33000000',GradientType=0 ); /* IE6-9 */
+}
+
+body{
+ackground: url(../img/zen-4a.png) center center fixed;
+ackground-size: cover;
+width: 100%;
+z-index: 0;
+
+background: rgb(181,228,88); /* Old browsers */
+background: -moz-linear-gradient(left,  rgba(181,228,88,1) 20%, rgba(217,231,147,1) 30%, rgba(181,228,88,1) 50%, rgba(217,231,147,1) 70%, rgba(181,228,88,1) 80%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(20%,rgba(181,228,88,1)), color-stop(30%,rgba(217,231,147,1)), color-stop(50%,rgba(181,228,88,1)), color-stop(70%,rgba(217,231,147,1)), color-stop(80%,rgba(181,228,88,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left,  rgba(181,228,88,1) 20%,rgba(217,231,147,1) 30%,rgba(181,228,88,1) 50%,rgba(217,231,147,1) 70%,rgba(181,228,88,1) 80%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left,  rgba(181,228,88,1) 20%,rgba(217,231,147,1) 30%,rgba(181,228,88,1) 50%,rgba(217,231,147,1) 70%,rgba(181,228,88,1) 80%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left,  rgba(181,228,88,1) 20%,rgba(217,231,147,1) 30%,rgba(181,228,88,1) 50%,rgba(217,231,147,1) 70%,rgba(181,228,88,1) 80%); /* IE10+ */
+background: linear-gradient(to right,  rgba(181,228,88,1) 20%,rgba(217,231,147,1) 30%,rgba(181,228,88,1) 50%,rgba(217,231,147,1) 70%,rgba(181,228,88,1) 80%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b5e458', endColorstr='#b5e458',GradientType=1 ); /* IE6-9 */
+}
+
+main{
+position: absolute;
+background: url(../img/bg-stripe.png), rgba(51,51,51,0.98);
+border-top: 60px solid #222;
+color: #eee;
+height: 100%;
+left: 50%;
+margin-left: -225px;
+padding-top: 10px;
+text-align: center;
+width: 450px;
+z-index: 1;
+}
+
+/*.footer-bg-left{
+display: none;
+
+position: fixed;
+background: url(../img/zen-4d.png) bottom left no-repeat;
+background-size: cover;
+bottom: 0;
+height: 100%;
+left: 0;
+width: 50%;
+}
+
+
+.footer-bg-right{
+display: none;
+
+position: fixed;
+background: url(../img/zen-4e.png) bottom right no-repeat;
+background-size: cover;
+bottom: 0;
+height: 100%;
+right: 0;
+width: 50%;
+}*/
+
+main nav{
+position: fixed;
+background: #222;
+bottom: 0;
+color: #eee;
+display: block;
+height: 60px;
+left: 50%;
+margin-left: -225px;
+padding-top: 10px;
+text-align: center;
+width: 450px;
+z-index: 1;
+}
+
+footer {
+position: fixed;
+background: url(../img/bg-vertical-stripe-4.png), rgba(0,0,0,.2);
+bottom: -10px;
+color: rgba(255,255,255,0.1);
+font-size: 5em;
+height: 20%;
+width: 100%;
+margin-left: -30%:
+transform-origin: 50% 100%;
+transform: perspective(300px) rotateX(40deg);}
+
+{
+background: url(../img/bg-vertical-stripe-3.png),-moz-linear-gradient(top,  rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.3) 100%); /* FF3.6+ */
+background: url(../img/bg-vertical-stripe-3.png),-webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0.05)), color-stop(100%,rgba(0,0,0,0.3))); /* Chrome,Safari4+ */
+background: url(../img/bg-vertical-stripe-3.png),-webkit-linear-gradient(top,  rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.3) 100%); /* Chrome10+,Safari5.1+ */
+background: url(../img/bg-vertical-stripe-3.png),-o-linear-gradient(top,  rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.3) 100%); /* Opera 11.10+ */
+background: url(../img/bg-vertical-stripe-3.png),-ms-linear-gradient(top,  rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.3) 100%); /* IE10+ */
+background: url(../img/bg-vertical-stripe-3.png),linear-gradient(to bottom,  rgba(0,0,0,0.05) 0%,rgba(0,0,0,0.3) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d000000', endColorstr='#4d000000',GradientType=0 ); /* IE6-9 */
+}

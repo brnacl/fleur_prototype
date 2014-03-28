@@ -1,0 +1,130 @@
+header {
+position: fixed;
+background: rgba(255,255,255,0.2);
+height: 120px;
+width: 100%;
+}
+
+.logo-medium-up {
+position: absolute;
+left: 30px;
+top: 30px;
+}
+
+
+/*DESKTOP USER MENU NAV********************************************DESKTOP USER MENU NAV*/
+.user-menu {
+position: absolute;
+top: 0px;
+right: 0;
+}
+
+.user-menu.upper-right{
+position: fixed;
+background: rgba(51,51,51,.95);
+background: rgba(0,0,0,.6);
+background: rgba(255,255,255,.4);
+border-radius: 0 0 0 3px;
+height: 30px;
+top: 0px;
+right: 0;
+min-width: 200px;
+width: auto;
+}
+
+.user-menu.upper-right:hover{
+border-radius: 0;
+}
+
+.logged-in-user {
+height: 30px;
+margin: 2px 20px 0;
+font-size: .8em;
+font-weight: 400;
+color: rgba(255,255,255,0.78);
+color: rgba(0,0,0,.6);
+float: left;
+}
+
+.user-email-address {
+
+}
+
+.user-menu.upper-right .logged-in-user {
+letter-spacing: .1em;
+margin: 6px 20px 0 20px;
+float: left;
+}
+
+.user-menu-dropdown{ 
+position: absolute;
+background: rgba(48,48,48,1);
+background: rgba(0,0,0,.6);
+background: rgba(255,255,255,.4);
+
+border-radius: 0 0 0 3px;
+color: rgba(255,255,255,0.8);
+font-weight: 300;
+margin: 30px 0;
+min-width: 200px;
+right: 0;
+width: 100%;
+z-index: 10000;
+}
+
+.user-menu ul:last-child { /* controls .user-menu-dropdown visibility*/
+visibility: hidden;
+opacity:0;
+transition:visibility 0s linear 0.2s,opacity 0.25s linear;
+}
+	.user-menu:hover > ul {
+	visibility:visible;
+	opacity:1;
+	transition-delay:0s;
+	}
+	
+.user-menu-dropdown li a{
+display: block;
+height: 39px;
+padding: 7px 0px 0px 20px;
+color: rgba(0,0,0,.6);
+
+}
+
+.user-menu-dropdown a:link{
+color: rgba(0, 0, 0, 0.6);
+color: rgba(0,0,0,.6);
+
+color: rgba(255,255,255,0.8);
+color: rgba(0,0,0,.6);
+
+}
+
+.user-menu-dropdown a:visited{
+color: rgba(255,255,255,0.8);
+color: rgba(0,0,0,.6);
+
+}
+
+.user-menu-dropdown a:hover{
+color: rgba(255,255,255,1);
+color: rgba(0,0,0,.6);
+background: rgba(255,255,255,.5);
+
+}
+
+.user-menu-dropdown a:active{
+color: rgba(0, 0, 0, 0.4);
+color: rgba(255,255,255,0.7);
+color: rgba(0,0,0,.6);
+
+}
+
+.user-menu-dropdown li {
+border-top: 1px solid rgba(255,255,255,.45);
+}
+
+.user-menu-dropdown li:last-child {
+border-bottom: 1px solid rgba(255,255,255,.15);
+height: 41px;
+}

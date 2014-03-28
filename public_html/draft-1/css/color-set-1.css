@@ -1,0 +1,256 @@
+/*colors for the ages of list items******************************************************/
+
+.color-1 {
+background: #1984BA;
+background: rgba(25,132,186,1);
+
+}
+
+.text-color-1 {
+color: rgba(25,132,186,1);
+}
+
+.border-color-1 {
+border-color: rgba(25,132,186,.85);
+}
+
+.caret-color-1{
+color: #1984BA;
+border-left-color: rgba(25,132,186,.85);
+border-bottom-color: rgba(25,132,186,.85);
+}
+
+.color-2 {
+background: #369FAE;
+background: rgba(54,159,174,1);
+}
+
+.text-color-2 {
+color: #369FAE;
+color: rgba(54,159,174,1);
+}
+
+.border-color-2 {
+border-color: rgba(54,159,174,.85);
+}
+
+.caret-color-2 {
+color: #369FAE;
+border-left-color: rgba(54,159,174,.85);
+border-bottom-color: rgba(54,159,174,.85);
+}
+
+.color-3{
+background: #61C89B;
+background: rgba(97,200,155,1);
+}
+
+.text-color-3{
+color: rgba(97,200,155,1);
+}
+
+.border-color-3{
+border-color: rgba(97,200,155,.85);
+}
+
+.caret-color-3{
+color: #61C89B;
+border-left-color: rgba(97,200,155,.85);
+border-bottom-color: rgba(97,200,155,.85);
+}
+
+.color-4 {
+background: #8DD86B;
+background: rgba(141, 216, 107, 1);
+}
+
+.text-color-4 {
+color: rgba(141, 216, 107, 1);
+}
+
+.border-color-4 {
+border-color: rgba(141, 216, 107, .85);
+}
+
+.caret-color-4 {
+color: #8DD86B;
+}
+
+.color-5{
+background: #B6E43A;
+background: rgba(182, 228, 58,1);
+}
+
+.text-color-5 {
+color: rgba(182, 228, 58,1);
+}
+
+.border-color-5{
+border-color: rgba(182, 228, 58,.85);
+}
+
+.caret-color-5{
+color: #B6E43A;
+}
+
+.color-6{
+background: #DAF032;
+background: rgba(218, 240, 50, 1);
+}
+
+.text-color-6{
+color: rgba(218, 240, 50, 1);
+}
+
+.border-color-6{
+border-color: rgba(218, 240, 50, .9);
+}
+
+.caret-color-6{
+color: #DAF032;
+}
+
+.color-7{
+background: #F9FD5D;
+background: rgba(249, 253, 93,1);
+}
+
+.text-color-7 {
+color: rgba(249, 253, 93,1);
+}
+
+.border-color-7{
+border-color: rgba(249, 253, 93,.85);
+}
+
+.caret-color-7{
+color: #F9FD5D;
+}
+
+.color-8{
+background: #FCEE64;
+background: rgba(252, 238, 100,1);
+}
+
+.text-color-8{
+color: rgba(252, 238, 100,1);
+}
+
+.border-color-8{
+border-color: rgba(252, 238, 100,.85);
+}
+
+.caret-color-8{
+color: #FCEE64;
+}
+
+.color-9{
+background: #F5BF5D;
+background: rgba(245, 191, 93,1);
+}
+
+.text-color-9{
+color: rgba(245, 191, 93,1);
+}
+
+.border-color-9{
+border-color: rgba(245, 191, 93,.85);
+}
+
+.caret-color-9{
+color: #F5BF5D;
+}
+
+.color-10{
+background: #ED9056;
+background: rgba(237, 144, 86,1);
+}
+
+.text-color-10{
+color: rgba(237, 144, 86,1);
+}
+
+.border-color-10{
+border-color: rgba(237, 144, 86,.85);
+}
+
+.caret-color-10{
+color: #ED9056;
+}
+
+.color-11{
+background: #E56C50;
+background: rgba(229,108,80,1);
+}
+
+.text-color-11{
+color: rgba(229,108,80,1);
+}
+
+.border-color-11{
+border-color: rgba(229,108,80,.85);
+}
+
+.caret-color-11{
+color: #E56C50;
+}
+
+.color-12{
+background: #DD5D4B;
+background: rgba(221,93,75,1);
+}
+
+.text-color-12{
+color: rgba(221,93,75,1);
+}
+
+.border-color-12{
+border-color: rgba(221,93,75,.85);
+}
+
+.caret-color-12{
+color: #DD5D4B;
+}
+
+.color-13{
+background: #D44D47;
+background: rgba(212,77,71,1);
+}
+
+.text-color-13{
+color: rgba(212,77,71,1);
+}
+
+.border-color-13{
+border-color: rgba(212,77,71,.85);
+}
+
+.caret-color-13{
+color: #D44D47;
+}
+
+.color-14{
+background: #CC3F43;
+background: rgba(204,63,67,1);
+}
+
+.text-color-14{
+color: rgba(204,63,67,1);
+}
+
+.border-color-14{
+border-color: rgba(204,63,67,.85);
+}
+
+.caret-color-14{
+color: #CC3F43;
+}
+
+.color-subdued{
+background: rgba(255,255,255,.15);
+ackground-image: url(../mg/subdued-60-bg.png);
+}
+
+.text-color-subdued {
+color: rgba(255,255,255,.15);
+}

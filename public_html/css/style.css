@@ -1,0 +1,1462 @@
+ul, ol, dl { /* a reset*/
+    margin-bottom: 0;
+}
+
+ul li{ /* a reset*/
+    list-style: none;
+}
+
+.row .row{
+    margin: 0 0 0 0;
+}
+
+.column, .columns{
+
+    padding: 0}
+
+p {
+    margin: 0;
+}
+
+a:link{ /*general link styles*/
+    color: rgba(0, 0, 0, 0.7);
+}
+a:visited {
+    color: rgba(0, 0, 0, 0.7);
+}
+
+a:hover{
+    color: rgba(0, 0, 0, 0.9);
+    background: none;
+}
+
+a:active{
+    color: rgba(0, 0, 0, 0.3);
+
+}
+
+
+
+
+
+/*begin styling the markup, in rough order***********************************************/
+
+body {
+    background: #444;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.shadow-wrapper {
+    padding: 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,.4);
+    border-radius: 10px 10px 0 0;
+
+}
+
+@media only screen and (min-width: 768px) { /*adds the big bg image if you're not on mobile*/
+    body {
+
+
+
+
+
+        /*-webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;*/
+    }
+}
+
+.header{
+    background: rgba(0,0,0,.1);
+
+    order-bottom: 1px solid rgba(0,0,0,0.015);
+    order-bottom: 1px solid rgba(255,255,255,0.06);
+    height:90px;
+    margin-top: 0px;
+}
+
+.mini-logo{
+    margin: 19px 0 0 23px;
+}
+
+h6.tagline{
+    background: rgba(0,0,0,.4);
+    color:#eee;
+    font-weight: 300;
+    font-size: .8em;
+    height: 100px;
+    letter-spacing: .08em;
+    line-height: 1.5em;
+    margin: 0;
+    padding: 15px 30px 0 30px;
+    display: none;
+}
+
+.header-2{/*background for promoted list item*/
+    position: absolute;
+    /*background: rgba(0,0,0,.2);
+    background: rgba(255,255,255,.1);*/
+    border-bottom: 0px solid rgba(0,0,0,0.01);
+    height: 244px;
+    width:100%;
+    visibility: visible; /*toggle this between "hidden" and "visible" depending on whether there is a promoted list item*////////
+}
+
+
+/*nav styling****************************************************************************/
+#app-top-nav { /*base styles for the little nav bar*/
+    position:fixed;
+    background: rgba(0,0,0,.7);
+    background: rgba(25,132,186,.9);
+    background: rgba(34, 175, 109,.9);
+    background: rgba(0, 149, 82, .8);
+    background: rgba(0, 121, 48, .9);
+    background: rgba(14, 117, 50,.9);
+    background: rgba(15, 97, 61,.8);
+    ackground: rgba(0, 95, 23,.9);
+    background: rgba(27, 57, 26, 0.9);
+    background: rgba(0,0,0,.35);
+    background: rgba(0,0,0,.3);
+
+    height: 60px;
+    padding: 0;
+    z-index: 100;
+}
+
+@media only screen and (min-width: 768px) { /*desktop styles for little nav bar*/
+    #app-top-nav {
+        position: relative;
+        order: 1px solid rgba(0,0,0,.02);
+        border-bottom: none;
+        margin-top: -60px;
+        border-radius: 10px 10px 0 0;
+        background: rgba(49, 49, 49, .95);
+
+    }
+
+}
+
+@media only screen and (min-width: 320px) and (max-width: 500px) and (orientation: landscape){
+    #app-top-nav {/*mess with these to decrease the height of the top bar in landscape mode on the iphone*/
+        eight: 25px;
+        ont-size: .7em;
+    }
+}
+
+
+#app-top-nav:before{
+    position: absolute;
+    top: 0p;
+    left: 0;
+    content:' ';
+    display: block;
+    height: 60px;
+    width: 60px;
+    z-index: -1;
+    ackground: rgba(45, 45, 45, .5);
+    border-radius: 10px 0 0 0;
+
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+}
+
+#app-top-nav p{
+    margin:0;
+    padding: 0;
+}
+
+.add-list-item{
+    position: relative;
+    height: 60px;
+    float: left;
+    font-size: 1.1em;
+    margin-top: 0px;
+    padding: 14px 0px 0px 15px;
+    width: 60px;
+    border-radius: 10px 0 0 0;
+    z-index: 0;
+}
+
+.add-list-item:before {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    content:' ';
+    display: block;
+    background: rgba(0,0,0,.15);
+    border-radius: 25px;
+    height: 50px;
+    width: 50px;
+    z-index: -1;
+}
+
+a.add-list-item:hover:before{
+    color: rgba(255,255,255,.85);
+    background: rgba(25,132,186,.95);
+    background: rgba(0,0,0,.25);
+    z-index: -1;
+}
+
+a.add-list-item:active:before{
+    color: rgba(255,255,255,.5);
+    background: rgba(25,132,186,.4);
+    background: rgba(0,0,0,.35);
+}
+
+
+.add-list-item.close{
+    position: relative;
+    float: left;
+    font-size: 1.1em;
+    margin-top: 0px;
+    padding: 15px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.add-list-item.close:before {
+    position: absolute;
+    bottom: 5px;
+    left: 5px;
+    content:' ';
+    display: block;
+    border-radius: 25px;
+    height: 50px;
+    width: 50px;
+    background: rgba(0,0,0,.15);
+
+}
+
+
+
+a.add-list-item.close:hover:before{
+    color: rgba(255,255,255,.85);
+    background: rgba(25,132,186,.95);
+    background: rgba(0,0,0,.25);
+}
+
+
+
+a.add-list-item.close:active:before{
+    color: rgba(255,255,255,.5);
+    background: rgba(25,132,186,.4);
+    background: rgba(0,0,0,.35);
+}
+
+img.add-list-item-button:hover, img.cancel-list-item-button:hover{
+    cursor: pointer;
+}
+
+ul#new-list-item{
+    display: none;
+}
+
+ul#add-new-list{
+    display: none;
+}
+
+ul#edit-list-item{
+    display: none;
+}
+
+.itty-branding{ /*marked up to show only on mobile*/
+    color: #666;
+    font-size: .9em;
+    float: left;
+    margin: 6px 0 0 10px;
+}
+
+.user-menu {
+    height: 30px;
+    float: right;
+}
+
+
+.logged-in-user {
+    height: 30px;
+
+    margin: 5px 10px 0;
+    font-size: .7em;
+    font-weight: 400;
+    color: rgba(255,255,255,0.78);
+    float: right;
+}
+
+.user-menu i{
+    order-left: 1px solid rgba(0, 0, 0, 0.1);
+    order-radius: 0 6px 0 0;
+    color: rgba(255,255,255,.7);
+    cursor:default;
+    float: right;
+    font-size: 1.1em;
+    height: 29px;
+    height: 30px;
+
+    width: 0px;
+    padding: 0;
+    display: none;
+}
+
+.user-menu-dropdown{
+    position: absolute;
+
+    background: rgba(0,0,0,1);
+    border-left: 0px solid rgba(255,255,255,.2);
+    border-radius: 0 0 6px 6px;
+    color: rgba(255,255,255,0.8);
+    font-weight: 300;
+    margin: 30px 0;
+    right: 0;
+    z-index: 100;
+}
+
+nav ul ul { /* controls .user-menu-dropdown visibility*/
+    visibility:hidden;
+    opacity:0;
+    transition:visibility 0s linear 0.25s,opacity 0.25s linear;
+
+}
+nav ul li.user-menu:hover > ul {
+    visibility:visible;
+    opacity:1;
+    transition-delay:0s;
+}
+
+.user-menu-dropdown li a{
+    display: block;
+    height: 40px;
+    padding: 10px 40px 0px 40px;
+}
+
+.user-menu-dropdown a:link{
+    font-size: .7em;
+    color: rgba(0, 0, 0, 0.6);
+    color: rgba(255,255,255,0.8);
+}
+
+.user-menu-dropdown a:visited{
+    color: rgba(255,255,255,0.8);
+}
+
+.user-menu-dropdown a:hover{
+    color: rgba(255,255,255,1);
+}
+
+.user-menu-dropdown a:active{
+    color: rgba(0, 0, 0, 0.4);
+    color: rgba(255,255,255,0.7);
+}
+
+
+.user-menu-dropdown li.bg-set{
+    height: 40px;
+}
+
+.user-menu-dropdown li a.bg-setting {
+    display: inline;
+    padding: 20px 10px 0px 10px;
+    margin: 0 20px -10px 0px;
+}
+
+
+.user-menu-dropdown li a.bg-setting:first-child {
+    margin-left: 0px;
+}
+
+
+ul.user-menu-dropdown li:first-child {
+    order-top: 1px solid rgba(255,255,255,.07);
+}
+
+ul.user-menu-dropdown li:nth-child(odd) {
+    background:rgba(255,255,255,0.1);
+}
+
+ul.user-menu-dropdown li:nth-child(even) {
+    border-top: 1px solid rgba(255,255,255,.15);
+    border-bottom: 1px solid rgba(255,255,255,.15);
+}
+
+ul.user-menu-dropdown li:last-child {
+    order-radius: 0 0 0 6px;
+}
+
+/*end of nav styling*********************************************************************/
+
+
+.archive-box {
+    background: rgba(0,0,0,.45);
+    color: rgba(255,255,255,0.8);
+    height: 244px;
+    padding: 60px;
+}
+
+.add-list-item-box {
+    background: rgba(0,0,0,.45);
+    color: rgba(255,255,255,0.8);
+    height: 244px;
+    display: block; /*toggle this between "none" and "block" to show the state*/
+}
+
+.add-list-item-box:after{
+    position: absolute;
+    top: 19px;
+    left: 19px;
+    content:' ';
+    display: block;
+    height: 24px;
+    width: 23px;
+    border: 4px solid rgba(255, 255, 255, .65);
+    border-radius: 100px;
+    z-index: 100;
+    box-shadow: 0 0 2px 0 rgba(0,0,0,0.2);
+}
+
+.edit-list-item-box {
+    background: rgba(0,0,0,.45);
+    color: rgba(255,255,255,0.8);
+    height: 244px;
+    display: block; /*toggle this between "none" and "block" to show the state*/
+}
+
+.edit-list-item-box:after{
+    position: absolute;
+    top: 19px;
+    left: 19px;
+    content:' ';
+    display: block;
+    height: 24px;
+    width: 23px;
+    border: 4px solid rgba(255, 255, 255, .65);
+    border-radius: 100px;
+    z-index: 100;
+    box-shadow: 0 0 2px 0 rgba(0,0,0,0.2);
+}
+
+.add-new-list-box {
+    background: rgba(0,0,0,.45);
+    color: rgba(255,255,255,0.8);
+    height: 244px;
+    display: block; /*toggle this between "none" and "block" to show the state*/
+}
+
+.add-new-list-box:after{
+    position: absolute;
+    top: 19px;
+    left: 19px;
+    content:' ';
+    display: block;
+    height: 24px;
+    width: 23px;
+    border: 4px solid rgba(255, 255, 255, .65);
+    border-radius: 100px;
+    z-index: 100;
+    box-shadow: 0 0 2px 0 rgba(0,0,0,0.2);
+}
+
+
+.add-tip {
+    position: absolute;
+    top: 0px;
+    right: -196px;
+    font-size: .8em;
+    background: rgba(0,0,0,.3);
+    color: rgba(49,49,49,.8);
+    background: rgba(255,255,255,0.9);
+    background: rgba(252, 238, 100,.75);
+
+
+    height: 184px;
+    width: 180px;
+    padding: 30px 30px 0 30px;
+    border-radius: 6px 6px 0 0;
+    display: none;
+}
+
+.add-list-item-box .add-tip i.icon-remove-sign {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    font-size: 1.3em;
+    color: rgba(0,0,0,0.3);
+}
+
+.add-list-item-box .add-tip p:before {
+    position: absolute;
+    content: "";
+    display: block;
+    top: 20px;
+    left: -15px;
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-right:15px solid rgba(252, 238, 100,.75);
+}
+
+
+.add-list-item-box h6 {
+    position: absolute;
+    background: rgba(204,63,67,.75);
+
+    border-radius: 0 0 6px 6px;
+    bottom: -60px;
+    right: 0;
+    color: rgba(255,255,255,0.9);
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: 300;
+    padding: 20px 0 0 28px;
+    width: 180px;
+    height: 60px;
+}
+
+.add-list-item-box p:last-child {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: .8em;
+    color: rgba(255,255,255,0.9);
+    display: none;
+}
+
+.add-list-item-box p:last-child i{
+    padding-left:11px;
+    padding-right: 6px;
+    font-size: 1.25em;
+}
+
+
+.add-list-item-form label{
+    display: none;
+}
+
+.add-list-item-form textarea{
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    box-shadow: none;
+    border: none;
+    background: none;
+    color: rgba(255,255,255,1);
+    height: 120px;
+    letter-spacing: .08em;
+    resize: none;
+    overflow: hidden;
+    text-align: left;
+    margin-top: 13px;
+    margin-left: -11px;
+    font-size: 1em;
+}
+
+.add-list-item-form input:focus{
+    box-shadow: none;
+    border: none;
+    background: none;
+    color: rgba(255,255,255,0.9);
+}
+
+.add-new-list-form textarea{
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    box-shadow: none;
+    border: none;
+    background: none;
+    color: rgba(255,255,255,1);
+    height: 120px;
+    letter-spacing: .08em;
+    resize: none;
+    overflow: hidden;
+    text-align: left;
+    margin-top: 13px;
+    margin-left: -11px;
+    font-size: 1em;
+}
+
+.add-new-list-form input:focus{
+    box-shadow: none;
+    border: none;
+    background: none;
+    color: rgba(255,255,255,0.9);
+}
+
+.edit-list-item-box h6 {
+    position: absolute;
+    background: rgba(204,63,67,.75);
+
+    border-radius: 0 0 6px 6px;
+    bottom: -60px;
+    right: 0;
+    color: rgba(255,255,255,0.9);
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: 300;
+    padding: 20px 0 0 28px;
+    width: 180px;
+    height: 60px;
+}
+
+.edit-list-item-box p:last-child {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: .8em;
+    color: rgba(255,255,255,0.9);
+    display: none;
+}
+
+.edit-list-item-box p:last-child i{
+    padding-left:11px;
+    padding-right: 6px;
+    font-size: 1.25em;
+}
+
+
+.edit-list-item-form label{
+    display: none;
+}
+
+.edit-list-item-form textarea{
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    box-shadow: none;
+    border: none;
+    background: none;
+    color: rgba(255,255,255,1);
+    height: 120px;
+    letter-spacing: .08em;
+    resize: none;
+    overflow: hidden;
+    text-align: left;
+    margin-top: 13px;
+    margin-left: -11px;
+    font-size: 1em;
+}
+
+.edit-list-item-form input:focus{
+    box-shadow: none;
+    border: none;
+    background: none;
+    color: rgba(255,255,255,0.9);
+}
+
+::-webkit-input-placeholder {
+    color: rgba(255,255,255,0.9);
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    opacity: 1;
+    color: rgba(255,255,255,0.9);
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+    opacity: 1;
+    color: rgba(255,255,255,0.9);
+}
+
+:-ms-input-placeholder {
+    color: rgba(255,255,255,0.9);
+}
+
+
+
+/*to do list styling*********************************************************************/
+
+
+
+#to-do-list-tab:hover, #archive-tab:hover, #trash-tab:hover{
+    cursor: pointer;
+}
+
+.list-item{
+    padding:0;
+    min-height: 61px;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-top: 1px solid rgba(255,255,255,.03);
+
+    border-right:0px solid rgba(0,0,0,0.15);
+    border-left:0px solid rgba(0,0,0,0.15);
+    background: rgba(255,255,255,.95);
+    background: rgba(0,0,0,.8);
+    background: rgba(51, 51, 51,.95);
+}
+
+.list-item:before {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+    content:' ';
+    display: block;
+    order: 1px solid rgba(0,0,0,.03);
+    height: 60px;
+    width: 60px;
+    ackground: rgba(255,255,255,0.05);
+    ackground: rgba(0,0,0,.5);
+    z-index: -1;
+}
+
+.list-item:nth-child(even){
+
+    background: #313131;
+    background: rgba(49, 49, 49, .95);
+}
+
+
+.list-item p{
+    position: relative;
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    margin: 19px 0 0 60px;
+    padding: 0 0 18px 0;
+    color: rgba(0,0,0,.85);
+    color: rgba(13, 38, 3, .75);
+    color: rgba(255,255,255,.95);
+
+    font-size: .88em;
+    font-weight: 300;
+    max-width: 72%;
+}
+
+.list-item p.subdued{
+    color: rgba(255,255,255,.15);
+}
+
+.promoted-list-item {
+    background: rgba(0,0,0,.45);
+    margin-top: 100px;
+    min-height: 244px;
+    font-size: 1.05em;
+    line-height: 1em;
+    padding: 0;
+}
+
+@media only screen and (min-width: 768px) {
+    .promoted-list-item {
+        margin-top: 0px;/*???????????????????????????????????*/
+    }
+}
+
+
+.promoted-list-item p {
+    color: rgba(255,255,255,0.8);
+    font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+    margin: 0 0 0 60px;
+    font-size: .95em;
+    font-weight: 300;
+}
+
+
+
+.promoted-list-item p.focus-task{
+    position: absolute;
+    left: 0px;
+    top: 19px;
+    letter-spacing: 0.08em;
+    max-width: 90%;
+}
+
+
+p[class*='focus-time-'] {
+    line-height: 1em;
+    bottom: 50px;
+    position: absolute;
+    margin-left: 60px;
+}
+
+p.focus-time.finished{
+
+}
+
+p.focus-time-value {
+    line-height: 1em;
+    font-size: 4em;
+    font-weight: 400;
+
+}
+
+.focus-time-label {
+    font-size: .25em;
+    margin: 0 10px 0 2px;
+}
+
+p.working-on{
+    position: absolute;
+    line-height: 1px;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: .8em;
+    letter-spacing: .3em;
+    bottom: 60px;
+    margin-left: 60px;
+
+    isplay: none;
+}
+
+p.finished-in{
+    position: absolute;
+    line-height: 1px;
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: .8em;
+    letter-spacing: .3em;
+    bottom: 50px;
+    display: none;
+}
+
+.promoted-timer-menu {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.promoted-age-timer {
+    display: block;
+    float: right;
+    font-size: .7em;
+    margin-right: 55px;
+    margin-bottom: 18px;
+    color: rgba(255,255,255,0.8);
+    font-weight: 300;
+    letter-spacing: .05em;
+}
+
+.demote-button {
+    position: absolute;
+    color: rgba(255,255,255,0.8);
+    float: right;
+    right: 18px;
+    bottom: 11px;
+    font-size: 1.6em;
+    line-height: 1em;
+    z-index: 10;
+}
+
+.demote-button:hover:after{
+    position: absolute;
+    bottom: -1px;
+    right: -8px;;
+    content:' ';
+    display: block;
+    border-radius: 99px;
+    height: 33px;
+    width: 33px;
+    background: rgba(255,255,255,0.1);
+    background: rgba(0,0,0,.3);
+    z-index: -1;
+
+}
+
+
+label.top-item-checkbox{
+    position: absolute;
+    top: 19px;
+    left: 19px;
+    border-color: rgba(80,80,80,1);
+}
+
+.list-item-menu{
+    float: right;
+    height: 100%;
+    width: 35px;
+}
+
+
+
+/*styling of the pop up timer menu*******************************************************/
+.right-side-button{ /*the button that shows the timer/trash/up dropdown menu*/
+    position: absolute;
+
+    color: rgba(0,0,0,.4);
+    cursor: default;
+    font-size: 1.8em;
+    min-height: 100%;
+    padding: 16px 0 0 16px;
+    right: 10px;
+    top: 0;
+    text-shadow: 0 0 2px rgba(0,0,0,0.2);
+    width: 45px;
+    z-index: 10;
+}
+
+.list-item ul *.right-side-button:after {} /*the button background*/
+/*position: absolute;
+
+content: "";
+height: 44px;
+border: 1px solid rgba(0,0,0,.18);
+border-left: none;
+border-radius: 0 22px 22px 0;
+left: 7px;
+top: 8px;
+width: 31px;
+
+   visibility:visible;
+opacity:0;
+transition:visibility 0s linear 0.25s,opacity 0.25s linear;
+}
+
+    .list-item ul *.right-side-button:hover:after {
+    visibility:visible;
+    opacity:1;
+    transition-delay:0s;
+    }*/
+
+
+.list-item ul ul {  /*controls timer-dropdown-menu visibility*/
+    visibility:visible;
+    opacity:0;
+    transition:visibility 0s linear 0.25s,opacity 0.25s linear;
+
+}
+
+.list-item ul li:hover > ul {
+    visibility:visible;
+    opacity:1;
+    transition-delay:0s;
+}
+
+.timer-dropdown-menu{
+    border-radius: 6px ;
+    border-right: 1px solid rgba(0,0,0,.05);
+    height: 44px;
+    position: absolute;
+    right: 41px;
+    top: 8px;
+    vertical-align: text-top;
+    width: 235px;
+    box-shadow: 0 0 1px 0 rgba(0,0,0,0.2);
+    z-index: 2
+
+}
+
+
+.list-item ul ul li {
+    display: inline;
+    margin: 0 0 0 14px; /*horizontal position of trash icon*/
+    z-index: 10;
+}
+
+.list-item ul ul li.trash-button{  /*trash icon size and vertical position, plus base size for trash icon*/
+    font-size: 1.2em;
+    line-height: 2.1em;
+}
+
+.list-item ul ul li.trash-button:hover:after { /*trash icon background*/
+    position: absolute;
+    background: rgba(0,0,0,.04);
+    content: "";
+    cursor: pointer;
+    border-radius: 6px 0 0 6px;
+    height: 42px;
+    left: 0;
+    top: 0px;
+    width: 41px;
+    z-index: -1;
+}
+
+.list-item ul ul li.trash-button:active:after {
+    position: absolute;
+    background: rgba(0,0,0,.1);
+    content: "";
+    cursor: pointer;
+    border-radius: 6px 0 0 6px;
+    height: 42px;
+    left: 0;
+    top: 0px;
+    width: 41px;
+    z-index: -1;
+}
+
+
+
+ .list-item ul ul li.promote-button { /*final size and position for arrow icon in the timer-dropdown-menu menu*/
+     font-size: 1.8em;
+     line-height: 1em;
+     top: 0px;
+     float: right;
+     right: -1px;
+     position: absolute;
+     padding: 6px 11px 0 11px;
+     border-left: 1px solid rgba(0,0,0,.04);
+     height: 100%;
+
+}
+
+li.promote-button:hover, li.trash-button:hover, i.demote-button:hover{
+    cursor: pointer;
+}
+.list-item ul ul li.promote-button:hover:after { /*arrow icon background*/
+    position: absolute;
+    border-radius: 0 6px 6px 0;
+    border: inset 21px;
+    border-color: rgba(0,0,0,.04);
+    border-style: solid;
+    content: "";
+    cursor: pointer;
+    display: block;
+    width: 30px;
+    height: 32px;
+
+    top: 1px;
+    left: -1px;
+    z-index: -1;
+}
+
+.list-item ul ul li.promote-button:active:after { /*arrow icon hover background*/
+    position: absolute;
+    border-radius: 0 6px 6px 0;
+    border: inset 21px;
+    border-color: rgba(0,0,0,.1);
+    border-style: solid;
+    content: "";
+    cursor: pointer;
+    display: block;
+    width: 29px;
+    height: 44px;
+
+    top: 0px;
+    left: -1px;
+    z-index: -1;
+}
+
+li.age-timer { /*timer size and position*/
+    position: absolute;
+    font-size: 1.1em;
+    font-weight: 400;
+    color:rgba(0,0,0,.65);
+    top: 0px;
+    left: 26px;
+    padding: 6px 8px 0 8px;
+    border-left: 1px solid rgba(0,0,0,.04);
+    height: 100%;
+}
+
+.time-label { /*span*/
+    font-size: .8em;
+    margin: 0 5px 0 2px;
+}
+
+.time-value { /*span*/
+    margin: 0 0 0 3px;
+}
+
+.archive-time-value {
+    color: rgba(255,255,255,.95);
+    font-weight: 300;
+    font-size: .88em;
+}
+
+.item-text i.icon-trash:hover {
+    cursor: pointer;
+    color: red;
+}
+
+span.put_back:hover, span.delete:hover{
+    cursor: pointer;
+    color: red;
+}
+
+/**end of styling of the pop up timer menus**********************************************/
+
+
+/*checkbox styling***********************************************************************/
+
+input[type="checkbox"] { /***hide the unstyled checkbox***/
+    visibility: hidden;
+}
+
+label {  /*** Create the box for the checkbox***/
+    cursor: pointer;
+    position: absolute;
+    width: 23px;
+    height: 24px;
+    top: 18px;
+    left: 19px;
+    border-radius:12px;
+    ox-shadow: 0 0 2px 0 rgba(0,0,0,0.2);
+}
+
+label:hover {
+    ox-shadow: 0 0 0px 1px rgba(255,255,255,0.2), inset 0 0 0px 11px rgba(255,255,255,0.1);
+    ox-shadow: 0 0 0px 1px rgba(255,255,255,0.1), inset 0 9px 5px 2px rgba(0,0,0,.05);
+    box-shadow: inset 0 0 0px 20px rgba(0,0,0,.05), 0 0 2px 0 rgba(0,0,0,0.2);
+
+}
+
+/*label:after { /*** Display the tick inside the checkbox***/
+/*opacity: 0;
+content: '';
+position: absolute;
+width: 23px;
+height: 13px;
+background: transparent;
+top: -3px;
+left: 4px;
+border: 4px solid #fff;
+border-top: none;
+border-right: none;
+-webkit-transform: rotate(-45deg);
+-moz-transform: rotate(-45deg);
+-o-transform: rotate(-45deg);
+-ms-transform: rotate(-45deg);
+transform: rotate(-45deg);
+}*/
+
+label:after { /*** Display the tick inside the checkbox***/
+    opacity: 0;
+    content: '';
+    position: absolute;
+    width: 26px;
+    height: 14px;
+    background: transparent;
+    top: -5px;
+    left: 3px;
+    border: 4px solid #fff;
+    border-top: none;
+    border-right: none;
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+input[type=checkbox]:checked + label:after { /*** Create the checkbox state for the tick*/
+    opacity: 1;
+}
+
+/*end of checkbox styling****************************************************************/
+
+
+
+
+/*bottom nav styling*********************************************************************/
+nav#app-nav-bottom ul{
+    border-top: 5px solid rgba(255,255,255,0.9);
+}
+
+nav#app-nav-bottom ul li{
+    color: rgba(255,255,255,0.8);
+    font-weight: 300;
+    background: rgba(0,0,0,.6);
+    background: rgba(49, 49, 49, .95);
+
+    height: 55px;
+    border-radius: 0 0 0 0;
+    order: 1px solid rgba(255,255,255,.3);
+    order-left: 1px solid rgba(255,255,255,.3);
+    padding-top: 13px;
+    margin-top: 0px;
+}
+nav#app-nav-bottom ul li:nth-child(even){
+    border-left: 1px solid rgba(255,255,255,.1);
+    border-right: 1px solid rgba(255,255,255,.1);
+
+}
+
+nav#app-nav-bottom ul li:first-child{
+    order-left:1px solid rgba(255,255,255,0.3);
+    border-radius: 0 0 0 10px;
+}
+
+nav#app-nav-bottom ul li:last-child{
+    border-radius: 0 0 10px 0;
+}
+
+nav#app-nav-bottom ul li.active-tab {
+    background: rgba(255,255,255,.9);
+    border:0px solid rgba(255,255,255,0.5);
+    border-top: none;
+    color: rgba(0,0,0,.8);
+}
+
+/*bottom of page styling*****************************************************************/
+
+.push{
+    content: '';
+    height: 140px;
+}
+
+.footer {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    height: 200px;
+    background: rgba(0,0,0,.2);
+    border-top: 1px solid rgba(0,0,0,0.05);
+    z-index: -100;
+}
+
+.copyright-info{
+    margin-top: 20px;
+    text-align:center;
+}
+
+.copyright-info p {
+    display: none;
+    color: #eee;
+    font-size: .8em;
+    font-weight: 300;
+}
+
+
+/*colors for the ages of list items******************************************************/
+
+.color-1 {
+    background: #1984BA;
+    background: rgba(25,132,186,.95);
+}
+
+.text-color-1 {
+    color: rgba(25,132,186,.95);
+}
+
+.color-2 {
+    background: #369FAE;
+    background: rgba(54,159,174,.95);
+}
+
+.text-color-2 {
+    color: rgba(54,159,174,.95);
+}
+
+.color-3{
+    background: #61C89B;
+    background: rgba(97,200,155,.95);
+}
+
+.text-color-3{
+    color: rgba(97,200,155,.95);
+}
+
+.color-4 {
+    background: #8DD86B;
+    background: rgba(141, 216, 107, .95);
+}
+
+.text-color-4 {
+    color: rgba(141, 216, 107, .95);
+}
+
+.color-5{
+    background: #B6E43A;
+    background: rgba(182, 228, 58,.95);
+}
+
+.text-color-5 {
+    color: rgba(182, 228, 58,.95);
+}
+
+.color-6{
+    background: #DAF032;
+    background: rgba(218, 240, 50, .95);
+}
+
+.text-color-6{
+    color: rgba(218, 240, 50, .95);
+}
+
+.color-7{
+    background: #F9FD5D;
+    background: rgba(249, 253, 93,.95);
+}
+
+.text-color-7 {
+    color: rgba(249, 253, 93,.95);
+}
+
+.color-8{
+    background: #FCEE64;
+    background: rgba(252, 238, 100,.95);
+}
+
+.text-color-8{
+    color: rgba(252, 238, 100,.95);
+}
+
+.color-9{
+    background: #F5BF5D;
+    background: rgba(245, 191, 93,.95);
+}
+
+.text-color-9{
+    color: rgba(245, 191, 93,.95);
+}
+
+.color-10{
+    background: #ED9056;
+    background: rgba(237, 144, 86,.95);
+}
+
+.text-color-10{
+    color: rgba(237, 144, 86,.95);
+}
+
+.color-11{
+    background: #E56C50;
+    background: rgba(229,108,80,.95);
+}
+
+.text-color-11{
+    color: rgba(229,108,80,.95);
+}
+
+.color-12{
+    background: #DD5D4B;
+    background: rgba(221,93,75,.95);
+}
+
+.text-color-12{
+    color: rgba(221,93,75,.95);
+}
+
+.color-13{
+    background: #D44D47;
+    background: rgba(212,77,71,.95);
+}
+
+.text-color-13{
+    color: rgba(212,77,71,.95);
+}
+
+.color-14{
+    background: #CC3F43;
+    background: rgba(204,63,67,.95);
+}
+
+.text-color-14{
+    color: rgba(204,63,67,.95);
+}
+
+.color-15{
+    background: #CC3F43;
+    background: rgba(204,63,67,.95);
+}
+
+.text-color-15{
+    color: rgba(204,63,67,.95);
+}
+
+
+
+
+/**********************************************/
+
+#trash:empty:before {
+    padding: 50px 0 0 0;
+    display: block;
+    color: white;
+    font-style: italic;
+    content: "You have no trashed items.";
+    text-align: center;
+}
+
+#archive:empty:before {
+    padding: 50px 0 0 0;
+    display: block;
+    color: white;
+    font-style: italic;
+    content: "You have no completed items.";
+    text-align: center;
+}
+
+.archive-page-navigation, .trash-page-navigation {
+    text-align: center;
+
+    background: rgba(49, 49, 49, .95);
+    padding: 15px;
+    height: 60px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.archive-page-navigation:empty, .trash-page-navigation:empty {
+    display: none;
+}
+
+.archive-page-navigation a, .trash-page-navigation a {
+    color: rgba(255,255,255,.9);
+    margin: 10px;
+
+    font-size: .75em;
+
+}
+
+.archive-page-navigation a.first_link, .trash-page-navigation a.first_link {
+    margin-left: 0;
+}
+
+a.page_link.active_page {
+    color: rgba(221,93,75,.95);
+}
+
+.list-container {
+    height: 544px;
+}
+
+p.item-text.archive-content, p.item-text.trash-content {
+    text-overflow: ellipsis; /* will make [...] at the end */
+    width: 280px; /* change to your preferences */
+    white-space: nowrap; /* paragraph to one line */
+    overflow:hidden; /* older browsers */
+
+    }
+p.item-text.archive-buttons {
+    margin: -40px 20px 0 300px;
+    float: right;
+}
+
+ul.archive i.icon-trash {
+    margin-left: 10px;
+}
+
+#to-do-list, #archive, #trash{
+    margin-top: 0px;
+
+}
+
+span.ellipse.more, span.ellipse.less {
+    color: rgba(221,93,75,.95);
+}
+
+li.list-dropdown {
+    position: relative;
+    float: left;
+    margin: 15px 0 0 10px;
+    height: 20px;
+    width: 200px;
+}
+
+li.list-dropdown select {
+   background: transparent;
+   width: 268px;
+   padding: 5px;
+   font-size: 16px;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   height: 34px;
+   color: white;
+}
+
+#to-do-container ul.multi-list  {
+    display: none;
+}
+
+#to-do-container ul.active-list {
+    display: block;
+}
+
+#to-do-container ul.hidden-list {
+    display: none;
+}
+
+.hidden-listname {
+    display: none;
+}

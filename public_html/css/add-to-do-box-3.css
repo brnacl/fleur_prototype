@@ -1,0 +1,83 @@
+.add-to-do-box {
+position: relative;
+background: rgba(0,0,0,.2);
+color: rgba(255,255,255,1);
+display: block;
+margin-top: 30px;
+margin-bottom: -30px;
+min-height: 60px;
+width: 100%;
+z-index: 10;
+}
+
+@media only screen and (min-width: 768px) { 
+	.add-to-do-box{
+	position: relative;
+	background: rgba(0,0,0,.2);
+	min-height: 239px;
+	margin-top: 1px;
+	margin-bottom: 0px;
+	}
+}
+
+.add-to-do-box:after{
+	position: absolute;
+	border: 1px solid rgba(255,255,255,.9);
+	border-radius: 100px;
+	content:' ';
+	display: block;
+	height: 23px;
+	left: 18px;
+	top: 20px;
+	width: 22px;
+	z-index: 100;
+}
+
+.add-to-do-form label{
+display: none;
+}
+
+.add-to-do-form textarea{
+font-family: 'Lato', sans-serif;
+position: absolute;
+box-shadow: none;
+border: none;
+background: none;
+color: rgba(255,255,255,.95);
+font-size: 1.3em;
+font-weight: 100;
+height: 180px;
+letter-spacing: .08em;
+margin-top: 18px;
+margin-left: 55px;
+padding: 0;
+overflow: hidden;
+resize: none;
+width: 80%;
+}
+
+.add-to-do-form input:focus{
+box-shadow: none;
+border: none;
+background: none;
+color: rgba(255,255,255,0.9);
+}
+
+::-webkit-input-placeholder {
+   color: rgba(255,255,255,0.9);
+}
+
+:-moz-placeholder { /* Firefox 18- */
+	opacity: 1;
+   color: rgba(255,255,255,0.9);  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+	opacity: 1;
+   color: rgba(255,255,255,0.9);  
+}
+
+:-ms-input-placeholder {  
+   color: rgba(255,255,255,0.9);  
+}
+

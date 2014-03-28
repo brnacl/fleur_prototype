@@ -1,0 +1,244 @@
+/*colors for the ages of list items******************************************************/
+
+.color-1 {
+background: #ABE34F;
+
+}
+
+.text-color-1 {
+color: #ABE34F;
+}
+
+.border-color-1 {
+border-color: #ABE34F;
+}
+
+.caret-color-1{
+color: #ABE34F;
+border-left-color: #ABE34F;
+border-bottom-color: #ABE34F;
+}
+
+.color-2 {
+background: #ABE34F;
+background: #ABE34F;
+}
+
+.text-color-2 {
+color: #ABE34F;
+color: #ABE34F;
+}
+
+.border-color-2 {
+border-color: #ABE34F;
+}
+
+.caret-color-2 {
+color: #ABE34F;
+border-left-color: #ABE34F;
+border-bottom-color: #ABE34F;
+}
+
+.color-3{
+background: #ABE34F;
+background: #ABE34F;
+}
+
+.text-color-3{
+color: #ABE34F;
+}
+
+.border-color-3{
+border-color: #ABE34F;
+}
+
+.caret-color-3{
+color: #ABE34F;
+border-left-color: #ABE34F;
+border-bottom-color: #ABE34F;
+}
+
+.color-4 {
+background: #ABE34F;
+}
+
+.text-color-4 {
+color: #ABE34F;
+}
+
+.border-color-4 {
+border-color: #ABE34F;
+}
+
+.caret-color-4 {
+color: #ABE34F;
+}
+
+.color-5{
+background: #C9D852;
+}
+
+.text-color-5 {
+color: #C9D852;
+}
+
+.border-color-5{
+border-color: #C9D852;
+}
+
+.caret-color-5{
+color: #C9D852;
+}
+
+.color-6{
+background: #DECE53;
+}
+
+.text-color-6{
+color: #DECE53;
+}
+
+.border-color-6{
+border-color: #DECE53;
+}
+
+.caret-color-6{
+color: #DECE53;
+}
+
+.color-7{
+background: #ECCA55;
+}
+
+.text-color-7 {
+color: #ECCA55;
+}
+
+.border-color-7{
+border-color: #ECCA55;
+}
+
+.caret-color-7{
+color: #ECCA55;
+}
+
+.color-8{
+background: #F0C855;
+}
+
+.text-color-8{
+color: #F0C855;
+}
+
+.border-color-8{
+border-color: #F0C855;
+}
+
+.caret-color-8{
+color: #F0C855;
+}
+
+.color-9{
+background: #EEBE51;
+}
+
+.text-color-9{
+color: #EEBE51;
+}
+
+.border-color-9{
+border-color: #EEBE51;
+}
+
+.caret-color-9{
+color: #EEBE51;
+}
+
+.color-10{
+background: #E9A448;
+}
+
+.text-color-10{
+color: #E9A448;
+}
+
+.border-color-10{
+border-color: #E9A448;
+}
+
+.caret-color-10{
+color: #E9A448;
+}
+
+.color-11{
+background: #E17D3B;
+}
+
+.text-color-11{
+color: #E17D3B;
+}
+
+.border-color-11{
+border-color: #E17D3B;
+}
+
+.caret-color-11{
+color: #E17D3B;
+}
+
+.color-12{
+background: #D54426;
+}
+
+.text-color-12{
+color: #D54426;
+}
+
+.border-color-12{
+border-color: #D54426;
+}
+
+.caret-color-12{
+color: #D54426;
+}
+
+.color-13{
+background: #D02D1E;
+}
+
+.text-color-13{
+color: #D02D1E;
+}
+
+.border-color-13{
+border-color: #D02D1E;
+}
+
+.caret-color-13{
+color: #D02D1E;
+}
+
+.color-14{
+background: #D02D1E;
+}
+
+.text-color-14{
+color: #D02D1E;
+}
+
+.border-color-14{
+border-color: #D02D1E;
+}
+
+.caret-color-14{
+color: #D02D1E;
+}
+
+.color-subdued{
+background: rgba(255,255,255,.15);
+ackground-image: url(../mg/subdued-60-bg.png);
+}
+
+.text-color-subdued {
+color: rgba(255,255,255,.15);
+}

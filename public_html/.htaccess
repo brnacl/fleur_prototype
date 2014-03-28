@@ -1,0 +1,10 @@
+Options +FollowSymLinks -MultiViews
+
+# Turn mod_rewrite on
+RewriteEngine On
+
+#RewriteCond %{HTTP_HOST} !www.fleur.dev
+#RewriteRule ^ http://www.fleur.dev%{REQUEST_URI} [L]
+
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteRule ^([^\.]+)$ $1.php [NC,L]

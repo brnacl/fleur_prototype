@@ -1,0 +1,17 @@
+body {
+background: url(../ig/grey_wash_wall.png) center center fixed, #999;
+}
+
+	@media only screen and (min-width: 768px) {
+		body{
+		background: url(../img/zen-3.png)center center fixed no-repeat #000;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		
+		height: 100%;
+		
+		}
+	}
+

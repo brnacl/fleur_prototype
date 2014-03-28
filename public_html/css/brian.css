@@ -1,0 +1,366 @@
+/*Changed dropdown a to span, eliminating hyperlink*/
+
+main nav ul ul li span {
+background-image: url(../img/5-white.png);
+background-repeat:repeat-x;
+color: rgba(255,255,255,.65);
+display: inline-block;
+height: 100%;
+padding: 7px 0 0 20px;
+transition: .25s;
+width: 100%;
+}
+
+main nav ul ul li span:hover{
+  background: rgba(0,0,0,0.2);
+  color: rgba(255,255,255,.75);
+  cursor: pointer;
+  }
+
+main nav ul ul li span.empty-list{ /*width of an empty list, making room for delete button*/
+width: calc( 100% - 60px);
+}
+
+main nav ul ul li span.empty-list:after{ /*vertical separator between empty list and delete button*/
+position: relative;
+background:rgba(255,255,255,0.05);
+content: '';
+display: block;
+float: right;
+height: 60px;
+margin-right: -1px;
+margin-top: -7px;
+width: 1px;
+}
+
+main nav ul ul li button.trash-symbol:hover + span.empty-list{
+  background: rgba(212, 66, 52,.3);
+  color: rgba(255,255,255,.75);
+  transition: .35s;
+  }
+
+/****************************************************CREATE NEW LIST BUTTON***************************************/
+
+main nav ul ul li span.create-new-list {
+font-weight: 300;
+font-size: .7em;
+letter-spacing: .13em;
+padding-top: 16px;
+text-transform: uppercase;
+}
+
+main nav ul li ul li .create-new-list-icon { /*circle*/
+position: relative;
+border: 1px solid rgba(255,255,255,0.6);
+border-radius: 100px;
+display: block;
+float: left;
+height: 25px;
+margin: 2px 15px 0 -2px;
+transition: .25s;
+width: 25px;
+}
+
+main nav ul ul li span.create-new-list:hover .create-new-list-icon {
+border-color: rgba(255,255,255,0.75);
+}
+
+main nav ul ul li .create-new-list-icon:before { /*horizontal bar*/
+position: absolute;
+content: '';
+background: rgba(255,255,255,0.6);
+display: block;
+height: 1px;
+right: 4px;
+top:11px;
+transition:.25s;
+width: 15px;
+z-index: 1001;
+}
+
+  main nav ul ul li span.create-new-list:hover .create-new-list-icon:before {
+  background: rgba(255,255,255,0.75);
+  }
+
+main nav ul ul li .create-new-list-icon:after { /*vertical bar*/
+position: absolute;
+content: '';
+background: rgba(255,255,255,0.6);
+display: block;
+height: 15px;
+right: 11px;
+top:4px;
+transition:.25s;
+width: 1px;
+z-index: 1001;
+}
+
+  main nav ul ul li span.create-new-list:hover .create-new-list-icon:after {
+  background: rgba(255,255,255,0.75);
+  }
+
+
+/*Add New List Box*/
+.add-new-list-box {
+position: relative;
+background: rgba(0,0,0,.2);
+color: rgba(255,255,255,1);
+display: block;
+margin-top: 30px;
+margin-bottom: -30px;
+min-height: 60px;
+width: 100%;
+z-index: 10;
+}
+
+@media only screen and (min-width: 768px) {
+  .add-new-list-box{
+  position: relative;
+  background: rgba(0,0,0,.2);
+  min-height: 239px;
+  margin-top: 1px;
+  margin-bottom: 0px;
+  }
+}
+
+.add-new-list-box:after{
+  position: absolute;
+  border: 1px solid rgba(255,255,255,.9);
+  border-radius: 100px;
+  content:' ';
+  display: block;
+  height: 23px;
+  left: 18px;
+  top: 20px;
+  width: 22px;
+  z-index: 100;
+}
+
+.add-new-list-form label{
+display: none;
+}
+
+.add-new-list-form textarea{
+font-family: 'Lato', sans-serif;
+position: absolute;
+box-shadow: none;
+border: none;
+background: none;
+color: rgba(255,255,255,.95);
+font-size: 1.3em;
+font-weight: 100;
+height: 180px;
+letter-spacing: .08em;
+margin-top: 18px;
+margin-left: 55px;
+padding: 0;
+overflow: hidden;
+resize: none;
+width: 80%;
+}
+
+.add-new-list-form input:focus{
+box-shadow: none;
+border: none;
+background: none;
+color: rgba(255,255,255,0.9);
+}
+
+/*Edit To Do Box*/
+.edit-to-do-box {
+position: relative;
+background: rgba(0,0,0,.2);
+color: rgba(255,255,255,1);
+display: block;
+margin-top: 30px;
+margin-bottom: -30px;
+min-height: 60px;
+width: 100%;
+z-index: 10;
+}
+
+@media only screen and (min-width: 768px) {
+  .edit-to-do-box{
+  position: relative;
+  background: rgba(0,0,0,.2);
+  min-height: 239px;
+  margin-top: 1px;
+  margin-bottom: 0px;
+  }
+}
+
+.edit-to-do-box:after{
+  position: absolute;
+  border: 1px solid rgba(255,255,255,.9);
+  border-radius: 100px;
+  content:' ';
+  display: block;
+  height: 23px;
+  left: 18px;
+  top: 20px;
+  width: 22px;
+  z-index: 100;
+}
+
+.edit-to-do-form label{
+display: none;
+}
+
+.edit-to-do-form textarea{
+font-family: 'Lato', sans-serif;
+position: absolute;
+box-shadow: none;
+border: none;
+background: none;
+color: rgba(255,255,255,.95);
+font-size: 1.3em;
+font-weight: 100;
+height: 180px;
+letter-spacing: .08em;
+margin-top: 18px;
+margin-left: 55px;
+padding: 0;
+overflow: hidden;
+resize: none;
+width: 80%;
+}
+
+.edit-to-do-form input:focus{
+box-shadow: none;
+border: none;
+background: none;
+color: rgba(255,255,255,0.9);
+}
+
+::-webkit-input-placeholder {
+   color: rgba(255,255,255,0.9);
+}
+
+:-moz-placeholder { /* Firefox 18- */
+  opacity: 1;
+   color: rgba(255,255,255,0.9);
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+  opacity: 1;
+   color: rgba(255,255,255,0.9);
+}
+
+:-ms-input-placeholder {
+   color: rgba(255,255,255,0.9);
+}
+
+
+/*Set default displays*/
+ #to-do-container ul.multi-list  {
+    display: none;
+}
+
+#to-do-container ul.active-list {
+    display: block;
+}
+
+#to-do-container ul.hidden-list {
+    display: none;
+}
+
+#new-to-do-container {
+    display: none;
+}
+
+#new-list-container {
+    display: none;
+}
+
+#new-to-do-container {
+    display: none;
+}
+.tab-1:hover,.tab-2:hover,.tab-3:hover {
+  cursor:pointer;
+  color: grey;
+}
+
+
+footer nav .trash-symbol:hover:before {
+  background: red;
+
+
+}
+
+footer nav .active-tab.trash-symbol:before {
+  background: rgba(0,0,0,.9);
+}
+
+footer nav .active-tab.trash-symbol:after {
+  border: 1px solid rgba(0,0,0,.9);
+}
+
+
+#trash:empty:before {
+    padding: 50px 0 0 0;
+    display: block;
+    color: white;
+    font-style: italic;
+    content: "You have no trashed items.";
+    text-align: center;
+}
+
+#archive:empty:before {
+    padding: 50px 0 0 0;
+    display: block;
+    color: white;
+    font-style: italic;
+    content: "You have no completed items.";
+    text-align: center;
+}
+
+li.list-option button.trash-symbol {
+  display:none;
+}
+
+.archive-page-navigation, .trash-page-navigation {
+    text-align: center;
+
+    background: rgba(49, 49, 49, .95);
+    padding: 15px;
+    height: 60px;
+    position: absolute;
+    width: 100%;
+}
+
+.archive-page-navigation:empty, .trash-page-navigation:empty {
+    display: none;
+}
+
+.archive-page-navigation a, .trash-page-navigation a {
+    color: rgba(255,255,255,.9);
+    margin: 10px;
+
+    font-size: .75em;
+
+}
+
+.archive-page-navigation a.first_link, .trash-page-navigation a.first_link {
+    margin-left: 0;
+}
+
+a.page_link.active_page {
+    color: rgba(221,93,75,.95);
+}
+
+p.item-text.trash-content {
+    text-overflow: ellipsis; /* will make [...] at the end */
+    width: 280px; /* change to your preferences */
+    white-space: nowrap; /* paragraph to one line */
+    overflow:hidden; /* older browsers */
+
+}
+
+p.to-do-text.archive-buttons {
+    margin: -40px 20px 0 300px;
+    float: right;
+}
+
+.no-display {
+  display: none;
+}

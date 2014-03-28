@@ -1,0 +1,553 @@
+
+/*TO-DO LIST*****************************************************************TO-DO LIST**/
+
+.full-height-wrapper {
+height: 100%;
+}
+
+main {
+height: 100%;
+background: rgba(0,0,0,.1);
+border-radius: 10px 10px 0 0;
+}
+
+#to-do-container {
+height: auto;
+-webkit-touch-callout: none;
+-webkit-user-select: none; /*user select is not official speck, so let's watch this to make sure it doesn't cause problems*/
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+
+#to-do-container > ul{ /*the main to do list*/
+position: relative;
+padding-bottom: 60px;
+width: 100%;
+z-index:0;
+}
+
+@media only screen and (min-width: 768px) {
+	#to-do-container > ul{
+	}
+}
+
+.to-do{
+background: rgba(45,45,45,.97);
+background-image: url(../img/5-white.png);
+background-repeat:repeat-x;
+position: relative;
+padding:0;
+min-height: 60px;
+border-top: 0px solid rgba(255,255,255,.07);
+margin: 0;
+}
+
+	.to-do.archived:nth-child(odd){
+	background-image: url(../img/10-white.png);
+	}
+
+	.to-do.archived:before{
+	position: absolute;
+	background: rgba(0,0,0,.05);
+	content:'';
+	display: block;
+	height:100%;
+	left:0;
+	margin-top: 0px;
+	top:0;
+	width: 60px;
+	}
+
+	.to-do.archived input[type=checkbox] + label {
+	display: none;
+	background: rgba(0,0,0,0.7);
+	}
+
+	.to-do.archived input[type=checkbox] + label:hover {
+	box-shadow: inset 0 0 0px 20px rgba(255,255,255,.15);
+	}
+
+	.to-do.archived{
+	border-top: 0px;
+	}
+
+	.to-do.archived .to-do-menu {
+	top: 0px;
+	border-right: 60px solid rgba(255,255,255,0.45);
+	border-left: 60px solid rgba(0,0,0,0.13);
+	background-image:url(../img/bg-stripe-20.png), url(../img/5-black.png);
+	}
+
+	.to-do.archived p.to-do-text{
+	color: rgba(0,0,0,.7);
+	font-size: .8em;
+	letter-spacing: 0;
+	line-height: 1.4;
+	margin: 0;
+	width: auto;
+	margin-left: 80px;
+	margin: 0 60px 0 80px;
+	}
+
+		@media screen only and (min-width: 768px;){
+		.to-do.archived p.to-do-text{
+		font-size: .9em;
+		padding: 20px 0 10px 0;
+		}
+		}
+
+	.to-do.archived.never-focused:after{
+	position: absolute;
+	background: rgba(255,255,255,.1);
+	border-radius: 100px;
+	content:' ';
+	display: block;
+	height:58px;
+	left:1px;
+	top:1px;
+	width: 58px;
+	z-index: 0;
+	}
+
+	.to-do.archived .got-focused-time p{
+	margin: 0;
+	color: rgba(45,45,45,.95);
+	color: #333;
+	color: rgba(255,255,255,.8);
+
+	letter-spacing: 0em;
+	margin: 0;
+	width: auto;
+	}
+
+	.got-focused-time:before{
+	position: absolute;
+	background: rgba(255,255,255,.7);
+	background: rgba(0,0,0,0.5);
+	border-radius: 100px 100px 0 0;
+	content:' ';
+	display: block;
+	height:29px;
+	left:1px;
+	top:1px;
+	width: 58px;
+	z-index: 0;
+	}
+
+	.got-focused-time:after{
+	position: absolute;
+	background: rgba(255,255,255,.9);
+	background: rgba(0,0,0,0.7);
+	border-radius: 0 0 100px 100px;
+	content:' ';
+	display: block;
+	height:29px;
+	left:1px;
+	top:30px;
+	width: 58px;
+	z-index: 0;
+	}
+
+	.got-focused-time .upper-time{
+	position: absolute;
+	left: 12px;
+	text-align: right;
+	top: -10px;
+	z-index: 1;
+	}
+
+	.got-focused-time .lower-time{
+	position: absolute;
+	left: 12px;
+	top: 11px;
+	z-index: 1;
+	}
+
+
+	.checkbox-wrapper.archived{
+	display: none;
+	}
+
+	.to-do.archived .to-do-menu{
+	z-index: 100;
+	}
+
+	.to-do.archived .to-do-menu .checkbox-wrapper{
+	position: absolute;
+	left: -60px;
+	z-index: 100;
+	}
+
+	.to-do.archived p.got-focused {
+	margin: 0 0 0 70px;
+	}
+
+	.to-do.archived .focus-button {
+	display: none;
+	}
+
+.to-do p.to-do-text{
+color: rgba(255,255,255,.85);
+font-family: "Lato", CenturyGothic, AppleGothic, sans-serif;
+font-size: 1em;
+font-weight: 100;
+letter-spacing: .068em;
+line-height: 1.5;
+margin: 0 60px 0 59px;
+padding: 19px 0 17px 0;
+width: auto;
+-webkit-touch-callout: none;
+-webkit-user-select: none; /*user select is not official speck, so let's watch this to make sure it doesn't cause problems*/
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+
+	@media only screen and (min-width: 768px) {
+		.to-do p.to-do-text{
+
+		}
+	}
+
+
+
+
+button.right-side-button {
+cursor: default;
+position: absolute;
+display: block;
+height: 100%;
+right: 0;
+top: 0;
+width: 60px;
+z-index: 0;
+}
+
+		@media only screen and (min-width: 768px) {
+			button.right-side-button {
+			width: 60px;
+			z-index: 110;
+			}
+
+			button.right-side-button:hover:after{
+			border-left-color: rgba(0,0,0,.8);
+			border-bottom-color: rgba(0,0,0,.8);
+			}
+		}
+
+
+
+		.to-do.archived button.right-side-button {
+		width: 60px;
+		}
+
+		@media only screen and (min-width: 768px) {
+			.to-do.archived a.right-side-button {
+			width: 120px;
+			}
+
+			.to-do.archived button.right-side-button:hover:after{
+			border-left-color: rgba(0,0,0,.9);
+			border-bottom-color: rgba(0,0,0,.9);
+			}
+		}
+
+.right-side-button:after {
+position: absolute;
+border:  1px;
+border-right-color: transparent;
+border-top-color: transparent;
+border-left-style: solid;
+border-bottom-style: solid;
+content: "";
+display: block;
+float: right;
+height: 15px;
+right: 22px;
+top: 23px;
+width: 15px;
+-webkit-transform: rotate(45deg);
+-moz-transform: rotate(45deg);
+-o-transform: rotate(45deg);
+-ms-transform: rotate(45deg);
+transform: rotate(45deg);
+transition: border-left-color .25s ease-in-out, border-bottom-color .25s ease-in-out;
+z-index: 1;
+}
+
+	@media only screen and (min-width: 768px) {
+		.right-side-button:after {
+		}
+	}
+
+	.to-do.archived .right-side-button:after {
+	top: 26px;
+	border-left-color: rgba(0,0,0,.7);
+	border-bottom-color: rgba(0,0,0,.7);
+	}
+
+
+/*MENU******************************************************************************MENU*/
+
+ul.to-do-menu {
+position: absolute;
+background-image:url(../img/bg-stripe-20.png);
+display: block;
+right: 0px;
+min-height: 60px;
+height: 100%;
+width: 100%;
+padding-left: 0px;
+top: 0px;
+border-right: 60px solid rgba(255,255,255,0.6);
+}
+
+
+@media only screen and (min-width: 768px) {
+	ul.to-do-menu {
+	border-left: 60px solid rgba(0,0,0,0.3);
+	z-index: 10;
+	}
+
+}
+
+/*.to-do:nth-child(odd) ul.to-do-menu {
+background-image: url(../img/10-white.png), url(../img/bg-stripe-20.png);
+}*/
+
+
+.to-do ul ul{  /*controls timer-dropdown-menu visibility*/
+visibility: hidden;
+opacity: 0;
+transition: .25s ease-in-out;
+}
+
+	.to-do ul li:hover > ul {
+	visibility: visible;
+	opacity: 1;
+	transition: 0.25s ease-in-out;
+	}
+
+	.to-do.archived ul li:hover > ul label {
+	display: block;
+	}
+
+
+
+.close-menu-button {
+position: absolute;
+cursor: pointer;
+height: 60px;
+margin: 0px 0 0 0px;
+right: -60px;
+top: 0px;
+width: 60px;
+}
+
+.close-menu-button:after {
+position: absolute;
+border: 1px;
+border-left-color: rgba(0,0,0,.7);
+border-bottom-color: rgba(0,0,0,.7);
+border-right-color: transparent;
+border-top-color: transparent;
+border-left-style: solid;
+border-bottom-style: solid;
+content: "";
+display: block;
+float: right;
+height: 15px;
+margin-right: 0px;
+margin-top: 0px;
+right: 22px;
+top: 23px;
+width: 15px;
+-webkit-transform: rotate(-135deg);
+-moz-transform: rotate(-135deg);
+-o-transform: rotate(-135deg);
+-ms-transform: rotate(-135deg);
+transform: rotate(-135deg);
+}
+
+li.age-of-the-to-do { /*timer size and position*/
+position: absolute;
+color:rgba(0,0,0,.75);
+display: block;
+height: 60px;
+left: 12px;
+top:-9px;
+z-index: 200;
+}
+
+.to-do.archived li.age-of-the-to-do{
+color:rgba(0,0,0,.85);
+}
+
+.to-do .time-value { /*span*/
+font-family: 'Lato', sans-serif;
+color:rgba(0,0,0,.6);
+font-size: 3em;
+font-weight: 100;
+letter-spacing: -3px;
+margin: 0px 0 0 -3px;
+}
+
+.to-do .time-label { /*span*/
+position: relative;
+color:rgba(0,0,0,.75);
+display: inline-block;
+font-family: 'Lato', sans-serif;
+font-size: 1.7em;
+font-weight: 100;
+letter-spacing: .05em;
+margin:0 0 0 5px;
+top: 0px;
+text-transform: lowercase;
+}
+
+
+
+/*TO DO LIST ITEM CONTROL BUTTONS********************************************************/
+
+ul.to-do-menu:after {  /*square bg for focus button*/
+position: absolute;
+background: rgba(255,255,255,0.4);
+content: '';
+display: block;
+height: 100%;
+right:0px;
+min-height: 60px;
+top: 0px;
+width: 60px;
+z-index: -1;
+}
+
+
+.focus-arrow { /*circle for focus button*/
+position: absolute;
+background: rgba(255,255,255,0.1);
+background: rgba(0,0,0,0.1);
+border: 1px solid rgba(51,51,51,.02);
+border-radius: 25px;
+display: block;
+height: 50px;
+right: 5px;
+top: 5px;
+transition: .25s;
+width: 50px;
+}
+
+	.focus-arrow:hover{
+	background: rgba(0,0,0,0.4);
+	}
+
+.focus-arrow:before { /*arrowhead*/
+position: absolute;
+border:   inset 2px;
+border-color: rgba(0,0,0,0.9);
+border-color: rgba(51,51,51,.6);
+border-left-color: transparent;
+border-bottom-color: transparent;
+border-right-style: solid;
+border-top-style: solid;
+content: "";
+display: block;
+float: right;
+height: 16px;
+margin-right: 0px;
+margin-top: 0px;
+right: 16px;
+top: 15px;
+transition:.25s;
+width: 16px;
+-webkit-transform: rotate(-45deg);
+-moz-transform: rotate(-45deg);
+-o-transform: rotate(-45deg);
+-ms-transform: rotate(-45deg);
+transform: rotate(-45deg);
+z-index: 1;
+}
+
+	.focus-arrow:hover:before {
+	border-right-color: rgba(255,255,255,0.8);
+	border-top-color: rgba(255,255,255,0.8);
+	}
+
+
+
+.focus-arrow:after {  /*arrow shaft*/
+position: absolute;
+background: rgba(51,51,51,.5);
+content: "";
+height: 21px;
+right: 23px;
+top: 15px;
+transition:.25s;
+width: 2px;
+z-index: 1;
+}
+
+	.focus-arrow:hover:after {
+	background: rgba(255,255,255,0.8);
+	}
+
+
+
+.delete-indicator { /*trash button square bg*/
+position: absolute;
+background: rgba(255,255,255,0.2);
+content: '';
+width: 61px;
+min-height: 60px;
+height: 100%;
+right: 60px;
+display: block;
+top: 0px;
+transition: .25s;
+z-index: -1;
+}
+
+
+.to-do .trash-symbol { /*trash circle*/
+position: absolute;
+background: rgba(0,0,0,0.1);
+border: 1px solid rgba(51,51,51,0);
+border-radius: 100px;
+display: block;
+height: 26px;
+right: 77px;
+top:17px;
+transition: .25s;
+width: 26px;
+}
+
+	.to-do .trash-symbol:hover {
+	background: rgba(212, 66, 52,1);
+	border: 1px solid rgba(255,255,255,0.0);
+	box-shadow: 0 0 1px 0 rgba(255,255,255,.1);
+	}
+
+	.to-do .trash-symbol:hover + .delete-indicator {
+	background: rgba(0,0,0,0.3);
+	}
+
+
+.to-do-menu .trash-symbol:before { /*the minus sign*/
+position: absolute;
+content: '';
+background: rgba(51,51,51,.55);
+display: block;
+height: 2px;
+right: 4px;
+top:11px;
+transition: .25s;
+width: 16px;
+z-index: 1;
+}
+
+	.to-do .trash-symbol:hover:before {
+	background:rgba(255,255,255,0.9);
+	}

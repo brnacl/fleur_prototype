@@ -1,0 +1,83 @@
+/****************************************************************************DAILY LIST CLASSES**********/
+
+
+
+
+.today {
+background: none;
+background: url(../img/50-black.png);
+order-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.to-do.today:nth-child(odd){
+	background-image: url(../img/10-white.png);
+	}
+
+
+.today:before{
+position: absolute;
+content:'';
+background: rgba(0,0,0,0.15);
+display: block;
+height: 100%;
+left: 0;
+min-height: 59px;
+top: 0;
+width: 60px;
+}
+
+.today:nth-child(even):before{
+position: absolute;
+content:'';
+background: rgba(0,0,0,0.2);
+
+display: block;
+height: 100%;
+left: 0;
+min-height: 59px;
+top: 0;
+width: 60px;
+}
+
+.today:after{
+position: absolute;
+content:'';
+background: rgba(0,0,0,0.05);
+display: block;
+height: 100%;
+right: 0;
+min-height: 59px;
+top: 0;
+width: 60px;
+}
+
+.today:nth-child(even):after{
+position: absolute;
+content:'';
+background: rgba(0,0,0,0.1);
+
+display: block;
+height: 100%;
+right: 0;
+min-height: 59px;
+top: 0;
+width: 60px;
+}
+
+.today p {
+color: rgba(0,0,0,0.55);
+font-weight: 400;
+letter-spacing: 0em;
+margin-left: 78px;
+margin-right: 70px;
+}
+
+.today:nth-child(even) ul.to-do-menu {
+background-image:  url(../img/20-white.png), url(../img/bg-stripe-20.png);
+}
+
+.today .right-side-button{
+border-left-color: rgba(255,255,255,0.9);
+border-bottom-color: rgba(255,255,255,0.9);
+
+}
